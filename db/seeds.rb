@@ -19,7 +19,7 @@ elon_musk = User.create({
     first_name: "Elon",
     last_name: "Musk"}
 )
-puts "Created #{User.count} users" 
+puts "Created #{User.count} users"
 
 ##########################################################################################################
 # TRANSPORTS
@@ -33,7 +33,7 @@ rocket = Transport.new({
     description: "The best rocket you could ever dream of",
     price: "1000000"}
 )
-rocket.user = elon_musk
+rocket.owner = elon_musk
 rocket.save
 
 car = Transport.new( {
@@ -42,7 +42,7 @@ car = Transport.new( {
     description: "standard German car",
     price: "50000"}
 )
-car.user = elon_musk
+car.owner = elon_musk
 car.save
 
 bike = Transport.new( {
@@ -51,9 +51,9 @@ bike = Transport.new( {
     description: "The poor's bike",
     price: "200"}
 )
-bike.user = elon_musk
+bike.owner = elon_musk
 bike.save
 
-puts "Created #{Transport.count} transports" 
-=======
+puts "Created #{Transport.count} transports"
+
 #   Character.create(name: 'Luke', movie: movies.first)

@@ -1,1 +1,13 @@
-<h1>Testing it</h1>
+
+
+<h1>INDEX</h1>
+
+<ul>
+  <% @transports.each do |transport| %>
+    <li><%= transport.category %></li>
+    <li><%= transport.name %></li>
+    <li><%= transport.description %></li>
+    <li><%= transport.price %></li>
+  <% end %>
+</ul>
+

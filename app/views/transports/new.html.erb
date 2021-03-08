@@ -1,1 +1,10 @@
-<h1></h1>
+<h1>create a new vehicle</h1>
+
+<%= simple_form_for [ @transport] do |f| %>
+  <%= f.input :category %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%#= f.input :photo, as: :file %>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>
