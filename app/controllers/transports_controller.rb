@@ -19,7 +19,7 @@ class TransportsController < ApplicationController
     @transport.save
 
     # no need for app/views/transports/create.html.erb
-    redirect_to transport_path(@user)
+    redirect_to transport_path(transport)
 
     # @review = Review.new(review_params)
     # @restaurant = Restaurant.find(params[:restaurant_id])
@@ -35,7 +35,7 @@ class TransportsController < ApplicationController
   private
 
   def transport_params
-    params.require(:transport).permit(:name, :description, :type, :price, :photo)
+    params.require(:transport).permit(:name, :description, :category, :price)
   end
 
 end

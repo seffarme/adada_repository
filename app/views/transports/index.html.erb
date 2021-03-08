@@ -4,6 +4,7 @@
 
 <ul>
   <% @transports.each do |transport| %>
+    <li><%= transport.category %></li>
     <li><%= transport.name %></li>
     <li><%= transport.description %></li>
     <li><%= transport.price %></li>
