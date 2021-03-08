@@ -1,6 +1,70 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!-- BANNER -->
+<div class="banner mb-4 d-flex" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.pixabay.com/photo/2017/06/26/08/43/ribblehead-viaduct-2443085_960_720.jpg);">
+    <div class="container">
+      <h1>ADADA brings <strong>you</strong> to <strong>anywhere around the world</strong>!</h1>
+      <p>Live fast, travel fast.</p>
+
+      <!-- SEARCH FORM -->
+      <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+        <div class="search-form-control form-group">
+            <div class="search-form-controller">
+                <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+                <button name="button" type="submit" class="btn btn-flat">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+
+<!-- TEMP LINK -->
 <%= link_to "Sign-out",destroy_user_session_path,   method: :delete %>
 <%= link_to "Sign-up", new_user_registration_path  %>
 <%= link_to "Sign-in", new_user_session_path %>
+
+ <!-- CARDS --> 
+  <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+
+    <div class="col">
+      <div class="card h-100">
+        <img src="https://images.unsplash.com/photo-1614640346090-45f7bd78a558?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NTZ8fG1lcmNlZGVzJTIwYW1nfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="car">
+        <div class="card-body">
+          <h5 class="card-title">Car</h5>
+          <p class="card-text">Renting a car is the only way to ride on road 66</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card h-100">
+        <img src="https://pi.tedcdn.com/r/talkstar-assets.s3.amazonaws.com/production/playlists/playlist_492/rocket_science_1200x627.jpg?quality=89&w=1200" class="card-img-top" alt="rocket">
+        <div class="card-body">
+          <h5 class="card-title">Rocket</h5>
+          <p class="card-text">Flyin' to the moon baby</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card h-100">
+        <img src="https://images.unsplash.com/photo-1546446391-db74a14ae4cc?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjJ8fHZlbG98ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="bicycle">
+        <div class="card-body">
+          <h5 class="card-title">Bicycle</h5>
+          <p class="card-text">Bike the tour de France</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div>
+
+  </div>
 
