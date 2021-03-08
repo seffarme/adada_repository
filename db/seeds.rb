@@ -12,7 +12,7 @@
 puts "Cleaning the user DB ..."
 User.destroy_all
 puts "Creating the user DB"
-elon_musk = User.create!({
+elon_musk = User.create({
     email: "elon.musk@tesla.com",
     password: "123456",
     phone_number: 0614514503,
@@ -27,8 +27,8 @@ puts "Created #{User.count} users"
 puts "Cleaning the transport DB ..."
 Transport.destroy_all
 puts "Creating the transport DB"
-rocket = Transport.create!({
-    type: "Rocket",
+rocket = Transport.new({
+    category: "Rocket",
     name: "Falcom -X",
     description: "The best rocket you could ever dream of",
     price: "1000000"}
@@ -36,8 +36,8 @@ rocket = Transport.create!({
 rocket.user = elon_musk
 rocket.save
 
-car = Transport.create( {
-    type: "Car",
+car = Transport.new( {
+    category: "Car",
     name: "BMW",
     description: "standard German car",
     price: "50000"}
@@ -45,8 +45,8 @@ car = Transport.create( {
 car.user = elon_musk
 car.save
 
-bike = Transport.create( {
-    type: "Bicycle",
+bike = Transport.new( {
+    category: "Bicycle",
     name: "Decathlon model S",
     description: "The poor's bike",
     price: "200"}
