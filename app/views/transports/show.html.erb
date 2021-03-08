@@ -1,5 +1,17 @@
 
 <h1>SHOW</h1>
+<%
+=begin%>
+ <%
+  if @transport.photo.attached?
+    url = cl_image_path @transport.photo.key, height: 300, width: 500, crop: :fill
+  else
+    url = "https://images.ladepeche.fr/api/v1/images/view/5eca937b8fe56f2f05260255/large/image.jpg?v=1"
+  end
+%>
+<%
+=end%>
+<%= cl_image_tag @transport.photo.key, height: 300, width: 400, crop: :fill %>
 
 
 
