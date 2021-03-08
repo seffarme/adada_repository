@@ -55,3 +55,5 @@ bike.user = elon_musk
 bike.save
 
 puts "Created #{Transport.count} transports" 
+=======
+#   Character.create(name: 'Luke', movie: movies.first)
