@@ -1,4 +1,3 @@
-
 <!-- BANNER -->
 <div class="banner mb-4 d-flex" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.pixabay.com/photo/2017/06/26/08/43/ribblehead-viaduct-2443085_960_720.jpg);">
     <div class="container">
@@ -19,6 +18,11 @@
 
     </div>
   </div>
+
+<!-- TEMP LINK -->
+<%= link_to "Sign-out",destroy_user_session_path,   method: :delete %>
+<%= link_to "Sign-up", new_user_registration_path  %>
+<%= link_to "Sign-in", new_user_session_path %>
 
  <!-- CARDS --> 
   <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
@@ -63,3 +67,4 @@
     </div>
 
   </div>
+
