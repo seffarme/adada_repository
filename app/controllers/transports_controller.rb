@@ -1,4 +1,5 @@
 class TransportsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:show, :index]
 
   def index
     @transports = Transport.all
@@ -19,7 +20,7 @@ class TransportsController < ApplicationController
     @transport.save
 
     # no need for app/views/transports/create.html.erb
-    redirect_to transport_path(transport)
+    redirect_to transport_path(@transport)
 
     # @review = Review.new(review_params)
     # @restaurant = Restaurant.find(params[:restaurant_id])
