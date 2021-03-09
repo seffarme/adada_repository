@@ -13,3 +13,11 @@
   </div>
 
 <%= link_to "Back to list", transports_path, class:"btn btn-primary" %>
+
+<div class="text-center" >
+  <% if @available %>
+   <button class="btn btn-primary m-3">Book Now</button>
+  <% else %>
+   <button class="btn btn-primary m-3">Booked</button>
+  <% end %>
+</div>
