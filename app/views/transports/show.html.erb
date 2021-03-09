@@ -1,31 +1,15 @@
 <!-- TITLE -->
-<div class="card-trip">
-    <%= cl_image_tag @transport.photo.key, height: 300, width: 400, crop: :fill %>
-    <!-- <img src="#" /> -->
+<div class="card-trip mb-4">
+    <h3 id="category-top-right"><%= @transport.category %></h3>
+    <%= cl_image_tag @transport.photo.key, crop: :fill %>
     <div class="card-trip-infos">
       <div>
         <h2><%= @transport.name %></h2>
         <p><%= @transport.description %></p>
       </div>
       <h3 class="card-trip-pricing"><%= number_with_delimiter(@transport.price, :delimiter => ',') %>€</h3>
-      <%= cl_image_tag @transport.owner.photo.key, class:"card-trip-user avatar-bordered" %>
+      <%= cl_image_tag @transport.owner.photo.key, crop: :fill, class:"card-trip-user avatar-bordered" %>
     </div>
   </div>
 
-
-
- <%
-  if @transport.photo.attached?
-    url = cl_image_path @transport.photo.key, height: 300, width: 500, crop: :fill
-  else
-    url = "https://images.ladepeche.fr/api/v1/images/view/5eca937b8fe56f2f05260255/large/image.jpg?v=1"
-  end
-%>
-
-<%= cl_image_tag @transport.photo.key, height: 300, width: 400, crop: :fill %>
-
-<h3><%= @transport.category %></h3>
-
-
-
-<%= link_to "Back to list", transports_path %>
+<%= link_to "Back to list", transports_path, class:"btn btn-primary" %>
