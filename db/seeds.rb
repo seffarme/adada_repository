@@ -6,11 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-##########################################################################################################
-# USERS
+puts "Cleaning the transport DB ..."
+Transport.destroy_all
 
 puts "Cleaning the user DB ..."
 User.destroy_all
+##########################################################################################################
+# USERS
+
+
 puts "Creating the user DB"
 elon_musk = User.create({
     email: "elon.musk@tesla.com",
@@ -24,8 +28,7 @@ puts "Created #{User.count} users"
 ##########################################################################################################
 # TRANSPORTS
 
-puts "Cleaning the transport DB ..."
-Transport.destroy_all
+
 puts "Creating the transport DB"
 rocket = Transport.new({
     category: "Rocket",
@@ -57,3 +60,11 @@ bike.save
 puts "Created #{Transport.count} transports"
 
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+require "open-uri"
+
+file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+
+User.last.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+puts User.last.photo.attached?
