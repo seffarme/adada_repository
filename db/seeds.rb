@@ -18,7 +18,6 @@ puts "Cleaning the user DB ..."
 User.destroy_all
 
 ##########################################################################################################
-
 # USER
 
 
@@ -36,7 +35,6 @@ puts "Created #{User.count} users"
 
 
 # TRANSPORTS
->>>>>>> master
 puts "Creating the transport DB"
 rocket = Transport.new({
     category: "Rocket",
