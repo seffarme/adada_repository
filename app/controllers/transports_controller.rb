@@ -22,17 +22,13 @@ class TransportsController < ApplicationController
     # no need for app/views/transports/create.html.erb
     redirect_to transport_path(@transport)
 
-    # @review = Review.new(review_params)
-    # @restaurant = Restaurant.find(params[:restaurant_id])
-    # @review.restaurant = @restaurant
-    # if @review.save
-    #   redirect_to restaurant_path(@restaurant)
-    # else
-    #   render :new
-    # end
-
   end
 
+  def destroy
+    @transport = Transport.find(params[:id])
+    @transport.destroy
+    redirect_to transports_path
+  end
   private
 
   def transport_params
