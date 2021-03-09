@@ -6,11 +6,30 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+<<<<<<< HEAD
+=======
 ##########################################################################################################
-# USERS
+# CLEANING
+
+>>>>>>> f1af5ce3115c5d4a7fc99556695fc70363a0ce8a
+puts "Cleaning the transport DB ..."
+Transport.destroy_all
 
 puts "Cleaning the user DB ..."
 User.destroy_all
+<<<<<<< HEAD
+##########################################################################################################
+# USERS
+
+
+=======
+
+
+##########################################################################################################
+# SEEDING
+
+# USER
+>>>>>>> f1af5ce3115c5d4a7fc99556695fc70363a0ce8a
 puts "Creating the user DB"
 elon_musk = User.create({
     email: "elon.musk@tesla.com",
@@ -21,39 +40,54 @@ elon_musk = User.create({
 )
 puts "Created #{User.count} users"
 
-##########################################################################################################
-# TRANSPORTS
 
-puts "Cleaning the transport DB ..."
-Transport.destroy_all
+<<<<<<< HEAD
+
+=======
+# TRANSPORTS
+>>>>>>> f1af5ce3115c5d4a7fc99556695fc70363a0ce8a
 puts "Creating the transport DB"
 rocket = Transport.new({
     category: "Rocket",
-    name: "Falcom -X",
+    name: "Falcon -X",
     description: "The best rocket you could ever dream of",
     price: "1000000"}
 )
 rocket.owner = elon_musk
+rocket.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/falcon_x_rocket.jpg"), filename: 'falcon_x_rocket.jpg', content_type: 'image/png')
 rocket.save
+
 
 car = Transport.new( {
     category: "Car",
-    name: "BMW",
-    description: "standard German car",
+    name: "BMW Serie 7",
+    description: "Standard German car",
     price: "50000"}
 )
 car.owner = elon_musk
+car.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/bmw_serie_7.jpg"), filename: 'bmw_serie_7.jpg', content_type: 'image/jpg')
 car.save
 
 bike = Transport.new( {
     category: "Bicycle",
     name: "Decathlon model S",
-    description: "The poor's bike",
+    description: "The poor man's bike",
     price: "200"}
 )
 bike.owner = elon_musk
+bike.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/decathlon_bicycle.jpg"), filename: 'decathlon_bicycle.jpg', content_type: 'image/jpg')
 bike.save
 
 puts "Created #{Transport.count} transports"
 
+
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+# require "open-uri"
+
+# file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+
+# User.last.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+# puts User.last.photo.attached?
+
