@@ -13,6 +13,14 @@
     </div>
   </div>
 
+
+<!-- TEMP LINK -->
+<%= link_to "Sign-out",destroy_user_session_path,   method: :delete %> |
+<%= link_to "Create a new ACCOUNT", new_user_registration_path  %> |
+<%= link_to "Sign-in", new_user_session_path %> |
+<%= link_to "My Account", user_path(current_user.id) %>
+
+
  <!-- CARDS -->
   <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
 

@@ -6,20 +6,30 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+<<<<<<< HEAD
+=======
 ##########################################################################################################
 # CLEANING
 
+>>>>>>> f1af5ce3115c5d4a7fc99556695fc70363a0ce8a
 puts "Cleaning the transport DB ..."
 Transport.destroy_all
 
 puts "Cleaning the user DB ..."
 User.destroy_all
+<<<<<<< HEAD
+##########################################################################################################
+# USERS
+
+
+=======
 
 
 ##########################################################################################################
 # SEEDING
 
 # USER
+>>>>>>> f1af5ce3115c5d4a7fc99556695fc70363a0ce8a
 puts "Creating the user DB"
 elon_musk = User.create({
     email: "elon.musk@tesla.com",
@@ -31,7 +41,11 @@ elon_musk = User.create({
 puts "Created #{User.count} users"
 
 
+<<<<<<< HEAD
+
+=======
 # TRANSPORTS
+>>>>>>> f1af5ce3115c5d4a7fc99556695fc70363a0ce8a
 puts "Creating the transport DB"
 rocket = Transport.new({
     category: "Rocket",
@@ -65,4 +79,15 @@ bike.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/decathlon
 bike.save
 
 puts "Created #{Transport.count} transports"
+
+
+#   Character.create(name: 'Luke', movie: movies.first)
+
+
+# require "open-uri"
+
+# file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+
+# User.last.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+# puts User.last.photo.attached?
 
