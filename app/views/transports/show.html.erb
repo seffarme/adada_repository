@@ -11,7 +11,13 @@
       <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
     </div>
   </div>
-
+<div class="text-center" >
+  <% if @available %>
+   <button class="btn btn-primary m-3">Book Now</button>
+  <% else %>
+   <button class="btn btn-primary m-3">Booked</button>
+  <% end %>
+</div>
 
 <%
 =begin%>
