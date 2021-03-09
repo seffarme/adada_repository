@@ -1,6 +1,5 @@
 <!-- TITLE -->
 <h1 class="m-4">Details of <%= @transport.name %></h1>
-
 <div class="card-trip">
     <img src="#" />
     <div class="card-trip-infos">
@@ -12,6 +11,20 @@
       <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
     </div>
   </div>
+
+
+<%
+=begin%>
+ <%
+  if @transport.photo.attached?
+    url = cl_image_path @transport.photo.key, height: 300, width: 500, crop: :fill
+  else
+    url = "https://images.ladepeche.fr/api/v1/images/view/5eca937b8fe56f2f05260255/large/image.jpg?v=1"
+  end
+%>
+<%
+=end%>
+<%= cl_image_tag @transport.photo.key, height: 300, width: 400, crop: :fill %>
 
 <h3><%= @transport.category %></h3>
 <h2><%= @transport.name %></h2>
