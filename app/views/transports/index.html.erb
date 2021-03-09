@@ -1,5 +1,5 @@
 <!-- TITLE -->
-<h1 class="m-4">List of all means of transportation</h1>
+<h1 class="mt-4 mb-4">All means of transportation <span>(<%= @transports.count %>)</span></h1> 
 
 <!-- CARDS -->
 <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -7,10 +7,10 @@
     <% @transports.each do |transport| %>
         <div class="col">
           <div class="card h-100">
-            <img src="..." class="card-img-top" alt="...">
+            <%= cl_image_tag transport.photo.key, crop: :fill, class:"card-img-top" %>
             <div class="card-body">
               <h5 class="card-title"><%= link_to transport.name, transport_path(transport) %></h5>
-              <p class="card-text"><%= transport.price %></p>
+              <p class="card-text bold"><%= number_with_delimiter(transport.price, :delimiter => ',') %>€</p>
               <p class="card-text"><%= transport.description %></p>
             </div>
             <div class="card-footer">
