@@ -6,46 +6,34 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-<<<<<<< HEAD
-=======
 ##########################################################################################################
 # CLEANING
 
->>>>>>> f1af5ce3115c5d4a7fc99556695fc70363a0ce8a
 puts "Cleaning the transport DB ..."
 Transport.destroy_all
 
 puts "Cleaning the user DB ..."
 User.destroy_all
-<<<<<<< HEAD
-##########################################################################################################
-# USERS
-
-
-=======
 
 
 ##########################################################################################################
 # SEEDING
 
 # USER
->>>>>>> f1af5ce3115c5d4a7fc99556695fc70363a0ce8a
 puts "Creating the user DB"
-elon_musk = User.create({
+elon_musk = User.new({
     email: "elon.musk@tesla.com",
     password: "123456",
     phone_number: 0614514503,
     first_name: "Elon",
     last_name: "Musk"}
 )
+elon_musk.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/elon_musk.jpg"), filename: 'elon_musk.jpg', content_type: 'image/jpg')
+elon_musk.save
 puts "Created #{User.count} users"
 
 
-<<<<<<< HEAD
-
-=======
 # TRANSPORTS
->>>>>>> f1af5ce3115c5d4a7fc99556695fc70363a0ce8a
 puts "Creating the transport DB"
 rocket = Transport.new({
     category: "Rocket",
