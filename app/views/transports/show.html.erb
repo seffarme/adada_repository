@@ -1,16 +1,18 @@
 <!-- TITLE -->
-<h1 class="m-4">Details of <%= @transport.name %></h1>
-<div class="card-trip">
-    <img src="#" />
+<div class="card-trip mb-4">
+    <h3 id="category-top-right"><%= @transport.category %></h3>
+    <%= cl_image_tag @transport.photo.key, crop: :fill %>
     <div class="card-trip-infos">
       <div>
-        <h2>Title here</h2>
-        <p>Short description here!</p>
+        <h2><%= @transport.name %></h2>
+        <p><%= @transport.description %></p>
       </div>
-      <h2 class="card-trip-pricing">£99.99</h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      <h3 class="card-trip-pricing"><%= number_with_delimiter(@transport.price, :delimiter => ',') %>€</h3>
+      <%= cl_image_tag @transport.owner.photo.key, crop: :fill, class:"card-trip-user avatar-bordered" %>
     </div>
   </div>
+
+<%= link_to "Back to list", transports_path, class:"btn btn-primary" %>
 
 
 <%
@@ -41,3 +43,12 @@
             transport_path(@transport),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
+
+<div class="text-center" >
+  <% if @available %>
+   <button class="btn btn-primary m-3">Book Now</button>
+  <% else %>
+   <button class="btn btn-primary m-3">Booked</button>
+  <% end %>
+</div>
+

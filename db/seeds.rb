@@ -7,30 +7,36 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+##########################################################################################################
+# CLEANING
+
+
 puts "Cleaning the transport DB ..."
 Transport.destroy_all
 
 puts "Cleaning the user DB ..."
 User.destroy_all
-<<<<<<< HEAD
+
 ##########################################################################################################
 
 # USER
 
+
 puts "Creating the user DB"
-elon_musk = User.create({
+elon_musk = User.new({
     email: "elon.musk@tesla.com",
     password: "123456",
     phone_number: 0614514503,
     first_name: "Elon",
     last_name: "Musk"}
 )
+elon_musk.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/elon_musk.jpg"), filename: 'elon_musk.jpg', content_type: 'image/jpg')
+elon_musk.save
 puts "Created #{User.count} users"
 
 
-
 # TRANSPORTS
-
+>>>>>>> master
 puts "Creating the transport DB"
 rocket = Transport.new({
     category: "Rocket",

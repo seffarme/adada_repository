@@ -7,6 +7,8 @@ class TransportsController < ApplicationController
 
   def show
     @transport = Transport.find(params[:id])
+    @available = true
+    # @available = @transport.bookings.empty?
   end
 
   def new

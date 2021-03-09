@@ -2,39 +2,55 @@
     overflow: hidden;
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  }
-  
-  .card-trip > img {
-    height: 200px;
-    width: 100%;
-    object-fit: cover;
-  }
-  
-  .card-trip h2 {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0;
-  }
-  
-  .card-trip p {
-    font-size: 12px;
-    opacity: .7;
-    margin: 0;
-  }
-  
-  
-  .card-trip .card-trip-infos {
-    padding: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
     position: relative;
   }
   
-  .card-trip-infos .card-trip-user {
-    position: absolute;
-    right: 16px;
-    top: -20px;
-    width: 40px;
-  }
+.card-trip > img {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+  
+.card-trip h2 {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip h3 {
+  font-size: 26px;
+  font-weight: bolder;
+}
+  
+.card-trip p {
+  font-size: 20px;
+  opacity: .7;
+   margin: 0;
+}
+  
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+  
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -30px;
+  width: 60px;
+}
+
+#category-top-right {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  color: white;
+  font-size: 16px;
+  border: 2px solid white;
+  padding: 4px 8px;
+  border-radius: 50px;
+}
   
