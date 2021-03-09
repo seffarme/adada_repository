@@ -20,8 +20,17 @@ User.destroy_all
 ##########################################################################################################
 # USER
 
-
 puts "Creating the user DB"
+marc_simoncini = User.new({
+    email: "marc.simoncini@angellbike.com",
+    password: "123456",
+    phone_number: 0614514503,
+    first_name: "Marc",
+    last_name: "Simoncini"}
+)
+marc_simoncini.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/marc_simoncini.jpg"), filename: 'marc_simoncini.jpg', content_type: 'image/jpg')
+marc_simoncini.save
+
 elon_musk = User.new({
     email: "elon.musk@tesla.com",
     password: "123456",
@@ -31,6 +40,47 @@ elon_musk = User.new({
 )
 elon_musk.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/elon_musk.jpg"), filename: 'elon_musk.jpg', content_type: 'image/jpg')
 elon_musk.save
+
+kimi_raikkonen = User.new({
+    email: "kimi.raikkonen@f1.com",
+    password: "123456",
+    phone_number: 0614514503,
+    first_name: "Kimi",
+    last_name: "Räikkönen"}
+)
+kimi_raikkonen.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/kimi_raikkonen.jpg"), filename: 'kimi_raikkonen.jpg', content_type: 'image/jpg')
+kimi_raikkonen.save
+
+monsieur_patate = User.new({
+    email: "mister.potato@potato.com",
+    password: "123456",
+    phone_number: 0614514503,
+    first_name: "Mister",
+    last_name: "Potato"}
+)
+monsieur_patate.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/monsieur_patate.jpg"), filename: 'monsieur_patate.jpg', content_type: 'image/jpg')
+monsieur_patate.save
+
+mario = User.new({
+    email: "mario@mario.com",
+    password: "123456",
+    phone_number: 0614514503,
+    first_name: "Super",
+    last_name: "Mario"}
+)
+mario.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/mario.jpg"), filename: 'mario.jpg', content_type: 'image/jpg')
+mario.save
+
+david = User.new({
+    email: "david@david.com",
+    password: "123456",
+    phone_number: 0614514503,
+    first_name: "David ",
+    last_name: "Hasselhoff"}
+)
+david.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/david.jpg"), filename: 'david.jpg', content_type: 'image/jpg')
+david.save
+
 puts "Created #{User.count} users"
 
 
@@ -61,11 +111,104 @@ bike = Transport.new( {
     category: "Bicycle",
     name: "Decathlon model S",
     description: "The poor man's bike",
-    price: "200"}
+    price: "20"}
 )
 bike.owner = elon_musk
 bike.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/decathlon_bicycle.jpg"), filename: 'decathlon_bicycle.jpg', content_type: 'image/jpg')
 bike.save
+
+angell = Transport.new( {
+    category: "Bicycle",
+    name: "Angell Bike",
+    description: "The french smart Bike by Marc Simoncini - Autonomy 70km - complete charge 2h - automatic lockin",
+    price: "100"}
+)
+angell.owner = marc_simoncini
+angell.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/angell_bike.jpg"), filename: 'angell_bike.jpg', content_type: 'image/jpg')
+angell.save
+
+formule = Transport.new( {
+    category: "car",
+    name: "f1",
+    description: "Drive with no noise and no pollution - be discret with this special car",
+    price: "10000"}
+)
+formule.owner = kimi_raikkonen
+formule.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/F1.jpg"), filename: 'F1.jpg', content_type: 'image/jpg')
+formule.save
+
+flyingpotato = Transport.new( {
+    category: "Other",
+    name: "Flying Potato",
+    description: "Go Back to childhood and dream big",
+    price: "1"}
+)
+flyingpotato.owner = monsieur_patate
+flyingpotato.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/flyingpotato.jpg"), filename: 'flyingpotato.jpg', content_type: 'image/jpg')
+flyingpotato.save
+
+ane = Transport.new( {
+    category: "Other",
+    name: "Ane",
+    description: "Ride a donkey and go far far away",
+    price: "15"}
+)
+ane.owner = monsieur_patate
+ane.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/ane.jpg"), filename: 'ane.jpg', content_type: 'image/jpg')
+ane.save
+
+
+airbus = Transport.new( {
+    category: "Other",
+    name: "Airbus A380",
+    description: "Do a long flight and dream big ",
+    price: "10000"}
+)
+airbus.owner = elon_musk
+airbus.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/airbus.jpg"), filename: 'airbus.jpg', content_type: 'image/jpg')
+airbus.save
+
+
+tracteur = Transport.new( {
+    category: "car",
+    name: "Tracteur",
+    description: "Feel like a magic farmer",
+    price: "15"}
+)
+tracteur.owner = monsieur_patate
+tracteur.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/tracteur.jpg"), filename: 'tracteur.jpg', content_type: 'image/jpg')
+tracteur.save
+
+
+tricycle = Transport.new( {
+    category: "bike",
+    name: "tricycle",
+    description: "Feel like a kid and dream big on your red bike",
+    price: "15"}
+)
+tricycle.owner = kimi_raikkonen
+tricycle.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/tricycle.jpg"), filename: 'tricycle.jpg', content_type: 'image/jpg')
+tricycle.save
+
+mario_kart = Transport.new( {
+    category: "car",
+    name: "Kart",
+    description: "go-kart-style racing and feel free",
+    price: "15"}
+)
+mario_kart.owner = mario
+mario_kart.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/mario_kart.jpg"), filename: 'mario_kart.jpg', content_type: 'image/jpg')
+mario_kart.save
+
+kit = Transport.new( {
+    category: "car",
+    name: "Kart",
+    description: "go-kart-style racing and feel free",
+    price: "15"}
+)
+kit.owner = mario
+kit.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/kit.jpg"), filename: 'kit.jpg', content_type: 'image/jpg')
+kit.save
 
 puts "Created #{Transport.count} transports"
 
