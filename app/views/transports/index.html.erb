@@ -10,7 +10,7 @@
             <%= cl_image_tag transport.photo.key, crop: :fill, class:"card-img-top" %>
             <div class="card-body">
               <h5 class="card-title"><%= link_to transport.name, transport_path(transport) %></h5>
-              <p class="card-text bold"><%= number_with_delimiter(transport.price, :delimiter => ',') %>€</p>
+              <p class="card-text bold"><%= number_with_delimiter(transport.price, :delimiter => ',') %>€/day</p>
               <p class="card-text"><%= transport.description %></p>
             </div>
           </div>
