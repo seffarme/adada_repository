@@ -4,7 +4,7 @@
     <img src="#" />
     <div class="card-trip-infos">
       <div>
-        <h2>Title here</h2>
+        <h2><%= @transport.name %></h2>
         <p>Short description here!</p>
       </div>
       <h2 class="card-trip-pricing">£99.99</h2>
@@ -27,7 +27,6 @@
 <%= cl_image_tag @transport.photo.key, height: 300, width: 400, crop: :fill %>
 
 <h3><%= @transport.category %></h3>
-<h2><%= @transport.name %></h2>
 <p><%= @transport.description %></p>
 <h2><%= @transport.price %></h2>
 
