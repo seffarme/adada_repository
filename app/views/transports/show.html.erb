@@ -21,9 +21,15 @@
           <div class="modal-body">
             <p>Your booking is confirmed. Thank you</p>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <%= link_to "Book another transport",  %>
+          <div class="">
+            <div class="d-flex justify-content-around align-items-center">
+              <div>
+               <%= link_to "Book another transport", transports_path(@transports)%>
+              </div>
+              <div class="modal-footer" >
+                <button type="button" class="btn btn-default" id="a" data-dismiss="modal">Close</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
