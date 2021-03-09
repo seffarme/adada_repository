@@ -10,20 +10,40 @@
       <h3 class="card-trip-pricing"><%= number_with_delimiter(@transport.price, :delimiter => ',') %>€</h3>
       <%= cl_image_tag @transport.owner.photo.key, crop: :fill, class:"card-trip-user avatar-bordered" %>
     </div>
-  </div>
-
-<%= link_to "Back to list", transports_path, class:"btn btn-primary" %>
-
-<%= link_to "Delete #{@transport.name}",
-            transport_path(@transport),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
-
+  
 <div class="text-center" >
   <% if @available %>
-   <button class="btn btn-primary m-3">Book Now</button>
+    <button type="button" class="btn btn-info btn-lg m-3" data-toggle="modal" data-target="#myModal" btn.disabled = true> Book Now </button>
+    <div class="modal fade" id="myModal" role="dialog" >
+      <div class="modal-dialog" class="text-center">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-body">
+            <p>Your booking is confirmed. Thank you</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <%= link_to "Book another transport",  %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <%#= link_to "Book Now",  data: { confirm: "Are you sure?" } %>
+   <!-- <button class="btn btn-primary m-3">Book Now</button> -->
   <% else %>
    <button class="btn btn-primary m-3">Booked</button>
   <% end %>
 </div>
+
+  </div>
+
+<%= link_to "Back to list", transports_path, class:"btn btn-light" %>
+
+<% if current_user == @transport.owner %>
+  <%= link_to "Delete #{@transport.name}",
+              transport_path(@transport),
+              method: :delete,
+              data: { confirm: "Are you sure?" },
+              class:"btn btn-danger" %>
+<% end %>
 

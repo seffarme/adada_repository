@@ -13,19 +13,6 @@
     </div>
   </div>
 
-
-<!-- TEMP LINK -->
-<%= link_to "Sign-out",destroy_user_session_path,   method: :delete %> |
-<%= link_to "Create a new ACCOUNT", new_user_registration_path  %> |
-<%= link_to "Sign-in", new_user_session_path %> |
-<% if current_user %>
-  <%=link_to "My Account", user_path(current_user.id)%>
-<% else %>
-  <%=link_to "Sign-in", new_user_session_path %>
-<% end %>
-
-
-
  <!-- CARDS -->
   <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
 
@@ -53,7 +40,7 @@
           <small class="text-muted">Last updated 3 mins ago</small>
         </div>
       </div>
-    </div
+    </div>
 
     <div class="col">
       <div class="card h-100">
