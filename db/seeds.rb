@@ -21,13 +21,15 @@ User.destroy_all
 
 # USER
 puts "Creating the user DB"
-elon_musk = User.create({
+elon_musk = User.new({
     email: "elon.musk@tesla.com",
     password: "123456",
     phone_number: 0614514503,
     first_name: "Elon",
     last_name: "Musk"}
 )
+elon_musk.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/elon_musk.jpg"), filename: 'elon_musk.jpg', content_type: 'image/jpg')
+elon_musk.save
 puts "Created #{User.count} users"
 
 
@@ -65,4 +67,15 @@ bike.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/decathlon
 bike.save
 
 puts "Created #{Transport.count} transports"
+
+
+#   Character.create(name: 'Luke', movie: movies.first)
+
+
+# require "open-uri"
+
+# file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+
+# User.last.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+# puts User.last.photo.attached?
 
