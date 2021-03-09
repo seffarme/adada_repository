@@ -10,15 +10,7 @@
       <h3 class="card-trip-pricing"><%= number_with_delimiter(@transport.price, :delimiter => ',') %>€</h3>
       <%= cl_image_tag @transport.owner.photo.key, crop: :fill, class:"card-trip-user avatar-bordered" %>
     </div>
-  </div>
-
-<%= link_to "Back to list", transports_path, class:"btn btn-primary" %>
-
-<%= link_to "Delete #{@transport.name}",
-            transport_path(@transport),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
-
+  
 <div class="text-center" >
   <% if @available %>
     <button type="button" class="btn btn-info btn-lg m-3" data-toggle="modal" data-target="#myModal" btn.disabled = true> Book Now </button>
@@ -42,4 +34,16 @@
    <button class="btn btn-primary m-3">Booked</button>
   <% end %>
 </div>
+
+  </div>
+
+<%= link_to "Back to list", transports_path, class:"btn btn-light" %>
+
+<% if current_user == @transport.owner %>
+  <%= link_to "Delete #{@transport.name}",
+              transport_path(@transport),
+              method: :delete,
+              data: { confirm: "Are you sure?" },
+              class:"btn btn-danger" %>
+<% end %>
 
