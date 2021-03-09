@@ -3,7 +3,7 @@
 <%= simple_form_for [ @transport] do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
-  <%= f.input :category,:collection => ["Car", "Moto", "Rocket", "Bicycle", "Bus", "Trotinett"],:label => "Category" ,:include_blank => false %>
+  <%= f.input :category,:collection => ["Car", "Moto", "Rocket", "Bicycle", "Bus", "Trotinette", "Animals", "Others"],:label => "Category" ,:include_blank => false %>
   <%= f.input :price %>
   <%= f.input :photo, as: :file %>
   <%= f.submit "Submit review", class: "btn btn-primary" %>

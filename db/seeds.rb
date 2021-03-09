@@ -6,8 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
 ##########################################################################################################
 # CLEANING
+
 
 puts "Cleaning the transport DB ..."
 Transport.destroy_all
@@ -15,11 +17,11 @@ Transport.destroy_all
 puts "Cleaning the user DB ..."
 User.destroy_all
 
-
 ##########################################################################################################
-# SEEDING
 
 # USER
+
+
 puts "Creating the user DB"
 elon_musk = User.new({
     email: "elon.musk@tesla.com",
@@ -34,6 +36,7 @@ puts "Created #{User.count} users"
 
 
 # TRANSPORTS
+>>>>>>> master
 puts "Creating the transport DB"
 rocket = Transport.new({
     category: "Rocket",

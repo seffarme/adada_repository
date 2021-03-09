@@ -14,6 +14,36 @@
 
 <%= link_to "Back to list", transports_path, class:"btn btn-primary" %>
 
+
+<%
+=begin%>
+ <%
+  if @transport.photo.attached?
+    url = cl_image_path @transport.photo.key, height: 300, width: 500, crop: :fill
+  else
+    url = "https://images.ladepeche.fr/api/v1/images/view/5eca937b8fe56f2f05260255/large/image.jpg?v=1"
+  end
+%>
+<%
+=end%>
+<%
+=begin%>
+ <%= cl_image_tag @transport.photo.key, height: 300, width: 400, crop: :fill %>
+<%
+=end%>
+
+<h3><%= @transport.category %></h3>
+<h2><%= @transport.name %></h2>
+<p><%= @transport.description %></p>
+<h2><%= @transport.price %></h2>
+
+<%= link_to "Back to list", transports_path %> |
+
+<%= link_to "Delete #{@transport.name}",
+            transport_path(@transport),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+
 <div class="text-center" >
   <% if @available %>
    <button class="btn btn-primary m-3">Book Now</button>
@@ -21,3 +51,4 @@
    <button class="btn btn-primary m-3">Booked</button>
   <% end %>
 </div>
+
