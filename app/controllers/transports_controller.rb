@@ -2,7 +2,7 @@ class TransportsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
 
   def index
-    @transports = Transport.all
+		@transports = Transport.order(:price)
   end
 
   def show
