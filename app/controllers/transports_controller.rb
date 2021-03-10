@@ -22,6 +22,15 @@ class TransportsController < ApplicationController
 
   def show
     @transport = Transport.find(params[:id])
+    @bookings       = Booking.where(transport_id: @transport.id)
+    @booking = Booking.new
+    @bookings_dates = @bookings.map do |booking|
+      {
+        from: booking.start_date,
+        to:   booking.end_date
+      }
+    end
+    # @transport.bookings = @booking
     @available = true
     # @available = @transport.bookings.empty?
   end

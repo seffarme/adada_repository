@@ -1,0 +1,10 @@
+<%= month_calendar transports: @bookings do |date, bookings| %>
+  <%= date %>
+
+  <% bookings.each do |booking| %>
+    <div>
+      <%= booking.start_time %>
+    </div>
+  <% end %>
+
+<% end %>

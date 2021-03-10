@@ -1,49 +1,28 @@
 <!-- TITLE -->
-<div class="card-trip mb-4">
-    <h3 id="category-top-right"><%= @transport.category %></h3>
-    <%= cl_image_tag @transport.photo.key, crop: :fill %>
-    <div class="card-trip-infos">
-      <div>
-        <h2><%= @transport.name %></h2>
-        <p><%= @transport.description %></p>
-      </div>
-      <h3 class="card-trip-pricing"><%= number_with_delimiter(@transport.price, :delimiter => ',') %>€</h3>
-      <%= cl_image_tag @transport.owner.photo.key, crop: :fill, class:"card-trip-user avatar-bordered" %>
-    </div>
-  
-<div class="text-center" >
-  <% if @available %>
-    <button type="button" class="btn btn-info btn-lg m-3" data-toggle="modal" data-target="#myModal" btn.disabled = true> Book Now </button>
-    <div class="modal fade" id="myModal" role="dialog" >
-      <div class="modal-dialog" class="text-center">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-body">
-            <p>Your booking is confirmed. Thank you</p>
-          </div>
-          <div class="">
-            <div class="d-flex justify-content-around align-items-center">
-              <div>
-               <%= link_to "Book another transport", transports_path(@transports)%>
-              </div>
-              <div class="modal-footer" >
-                <button type="button" class="btn btn-default" id="a" data-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  <%#= link_to "Book Now",  data: { confirm: "Are you sure?" } %>
-   <!-- <button class="btn btn-primary m-3">Book Now</button> -->
-  <% else %>
-   <button class="btn btn-primary m-3">Booked</button>
-  <% end %>
-</div>
 
+<div class="main_wrapper d-flex justify-content">
+  <div class="d-flex flex-row">
+    <div class="card-trip mb-4">
+        <h3 id="category-top-right"><%= @transport.category %></h3>
+        <%= cl_image_tag @transport.photo.key, crop: :fill %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= @transport.name %></h2>
+            <p><%= @transport.description %></p>
+          </div>
+          <h3 class="card-trip-pricing"><%= number_with_delimiter(@transport.price, :delimiter => ',') %>€</h3>
+          <%= cl_image_tag @transport.owner.photo.key, crop: :fill, class:"card-trip-user avatar-bordered" %>
+        </div>
+    </div>
   </div>
 
-<%= link_to "Back to list", transports_path, class:"btn btn-light" %>
+  <div class="d-flex flex-row">
+  <%= render "transports/form_booking" %>
+  </div>
+
+</div>
+
+<%#= link_to "Back to list", transports_path, class:"btn btn-light" %>
 
 <% if current_user == @transport.owner %>
   <%= link_to "Delete #{@transport.name}",
@@ -53,3 +32,4 @@
               class:"btn btn-danger" %>
 <% end %>
 
+<%= render "transports/modal_booking" %>
