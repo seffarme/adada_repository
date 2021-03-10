@@ -1,0 +1,22 @@
+<div class="text-center" >
+  <div class="modal fade" id="myModal" role="dialog" >
+    <div class="modal-dialog" class="text-center">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <p>Your booking is confirmed. Thank you</p>
+        </div>
+        <div class="">
+          <div class="d-flex justify-content-around align-items-center">
+            <div>
+              <%= link_to "Book another transport", transports_path(@transports)%>
+            </div>
+            <div class="modal-footer" >
+              <button type="button" class="btn btn-default" id="a" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
