@@ -1,6 +1,6 @@
 class Transport < ApplicationRecord
   # CONSTANT
-  CATEGORY = ["Car", "Moto", "Rocket", "Bicycle", "Bus", "Scooter", "Animal", "Other"]
+  CATEGORY = ["Car", "Motorcycle", "Rocket", "Bicycle", "Bus", "Scooter", "Animal", "Other"]
 
   # Dependencies
   belongs_to :owner, class_name: 'User'
