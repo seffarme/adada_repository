@@ -10,7 +10,7 @@
       <h3 class="card-trip-pricing"><%= number_with_delimiter(@transport.price, :delimiter => ',') %>€</h3>
       <%= cl_image_tag @transport.owner.photo.key, crop: :fill, class:"card-trip-user avatar-bordered" %>
     </div>
-  
+
 <div class="text-center" >
   <% if @available %>
     <button type="button" class="btn btn-info btn-lg m-3" data-toggle="modal" data-target="#myModal" btn.disabled = true> Book Now </button>
@@ -24,7 +24,7 @@
           <div class="">
             <div class="d-flex justify-content-around align-items-center">
               <div>
-               <%= link_to "Book another transport", transports_path(@transports)%>
+                <%= link_to "Book another transport", transports_path(@transports)%>
               </div>
               <div class="modal-footer" >
                 <button type="button" class="btn btn-default" id="a" data-dismiss="modal">Close</button>
