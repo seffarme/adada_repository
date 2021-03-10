@@ -3,7 +3,8 @@
 
 <!-- WORLDMAP -->
 <div id="map"
-     style="width: 100%; height: 600px;"
+      class="mb-4"
+     style="width: 100%; height: 400px;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
@@ -18,6 +19,7 @@
               <h5 class="card-title"><%= link_to transport.name, transport_path(transport) %></h5>
               <p class="card-text bold"><%= number_with_delimiter(transport.price, :delimiter => ',') %>€/day</p>
               <p class="card-text"><%= transport.description %></p>
+              <p class="card-text"><%= transport.address %></p>
             </div>
           </div>
         </div>
