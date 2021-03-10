@@ -1,13 +1,13 @@
 <!-- BANNER -->
 <div class="banner mb-4 d-flex" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.pixabay.com/photo/2017/06/26/08/43/ribblehead-viaduct-2443085_960_720.jpg);">
     <div class="container">
-      <h1>ADADA brings <strong>you</strong> to <strong>anywhere around the world</strong>!</h1>
+      <h1>ADADA brings <strong>you</strong> to anywhere around the world</strong>!</h1>
       <p>Live fast, travel fast.</p>
 
       <!-- SEARCH FORM -->
       <%= simple_form_for :search, url: root_path, method: :get do |f| %>
 				<div class="search-form">
-				  <%= link_to "Transports List", "/transports", class: "btn btn-ghost" %>
+				  <%= link_to "Choose your mount", "/transports", class: "btn btn-ghost" %>
         </div>
       <% end %>
     </div>

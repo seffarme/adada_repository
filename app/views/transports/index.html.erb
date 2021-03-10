@@ -1,25 +1,21 @@
 <!-- TITLE -->
-<h1 class="mt-4 mb-4">All means of transportation <span>(<%= @transports.count %>)</span></h1>
+<h1 class="mt-4 mb-4">Choose how you want to travel... <span>(<%= @transports.count %>)</span></h1>
 
 <!-- CARDS -->
-<div class="row row-cols-1 row-cols-md-3 g-4 mb-4>
+<div class="row row-cols-sm-12 row-cols-md-6 row-cols-lg-3">
+
     <% @transports.each do |transport| %>
-        <div class="col">
-          <div class="card h-100">
-            <h3 id="category-top-right"><%= transport.category %></h3>
-            <%= cl_image_tag transport.photo.key, crop: :fill, class:"card-img-top" %>
-            <div class="card-body">
-              <h5 class="card-title"><%= link_to transport.name, transport_path(transport) %></h5>
-              <p class="card-text bold"><%= number_with_delimiter(transport.price, :delimiter => ',') %>€/day</p>
-              <p class="card-text"><%= transport.description %></p>
-            </div>
+      <div class="col mb-4">
+        <div class="card h-100">
+          <h3 id="category-top-right"><%= transport.category %></h3>
+          <%= cl_image_tag transport.photo.key, crop: :fill, class:"card-img-top" %>
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to transport.name, transport_path(transport) %></h5>
+            <p class="card-text bold"><%= number_with_delimiter(transport.price, :delimiter => ',') %>€/day</p>
+            <p class="card-text"><%= transport.description %></p>
           </div>
         </div>
-        <div class="card-footer">
-          <small class="text-muted"><%= transport.category %></small>
-        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
 
 </div>
