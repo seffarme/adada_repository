@@ -1,8 +1,7 @@
 class TransportsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:show, :index]
+  skip_before_action :authenticate_user!, only: %i[show index]
 
   def index
-
 		if params[:category]
 			@transports = Transport.where('category=?', params[:category])
 			# do some stuf
@@ -10,6 +9,15 @@ class TransportsController < ApplicationController
 			@transports = Transport.order(:price)
 		end
 		# raise
+    
+    # Geocoding
+    @markers = @transports.geocoded.map do |transport|
+      {
+        lat: transport.latitude,
+        lng: transport.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { transport: transport })
+      }
+    end
   end
 
   def show
@@ -30,7 +38,6 @@ class TransportsController < ApplicationController
 
     # no need for app/views/transports/create.html.erb
     redirect_to transport_path(@transport)
-
   end
 
   def destroy
@@ -38,10 +45,10 @@ class TransportsController < ApplicationController
     @transport.destroy
     redirect_to transports_path
   end
+
   private
 
   def transport_params
     params.require(:transport).permit(:name, :description, :category, :price, :photo)
   end
-
 end
