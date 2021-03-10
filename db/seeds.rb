@@ -133,7 +133,7 @@ angell.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/angell_
 angell.save
 
 formule = Transport.new( {
-    category: "car",
+    category: "Car",
     name: "F1",
     description: "Drive with no noise and no pollution - be discret with this special car",
     price: "10000",
@@ -182,7 +182,7 @@ airbus.save
 
 
 tracteur = Transport.new( {
-    category: "car",
+    category: "Car",
     name: "Tracteur",
     description: "Feel like a magic farmer",
     price: "15",
@@ -194,7 +194,7 @@ tracteur.save
 
 
 tricycle = Transport.new( {
-    category: "bike",
+    category: "Bicycle",
     name: "tricycle",
     description: "Feel like a kid and dream big on your red bike",
     price: "15",
@@ -206,7 +206,7 @@ tricycle.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/tricy
 tricycle.save
 
 mario_kart = Transport.new( {
-    category: "car",
+    category: "Car",
     name: "Kart",
     description: "go-kart-style racing and feel free",
     price: "15",
@@ -218,7 +218,7 @@ mario_kart.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/mar
 mario_kart.save
 
 kit = Transport.new( {
-    category: "car",
+    category: "Car",
     name: "Kart",
     description: "go-kart-style racing and feel free",
     price: "15",
