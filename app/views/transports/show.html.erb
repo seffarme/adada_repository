@@ -8,9 +8,11 @@
         <p><%= @transport.description %></p>
       </div>
       <h3 class="card-trip-pricing"><%= number_with_delimiter(@transport.price, :delimiter => ',') %>€</h3>
-      <%= cl_image_tag @transport.owner.photo.key, crop: :fill, class:"card-trip-user avatar-bordered" %>
+      <%= cl_image_tag @transport.owner.photo.key, crop: :thumb, class:"card-trip-user avatar-bordered" %>
+
+
     </div>
-  
+
 <div class="text-center" >
   <% if @available %>
     <button type="button" class="btn btn-info btn-lg m-3" data-toggle="modal" data-target="#myModal" btn.disabled = true> Book Now </button>
@@ -50,6 +52,6 @@
               transport_path(@transport),
               method: :delete,
               data: { confirm: "Are you sure?" },
-              class:"btn btn-danger" %>
+              class:"btn btn-light" %>
 <% end %>
 
