@@ -1,5 +1,25 @@
 <!-- TITLE -->
-<h1 class="mt-4 mb-4">All means of transportation <span>(<%= @transports.count %>)</span></h1>
+<div class="d-flex align-items-center justify-content-between">
+	<h1 class="mt-4 mb-4">All means of transportation <span>(<%= @transports.count %>)</span></h1>
+
+	<!-- TRI -->
+	<div class="dropdown">
+	  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" 	aria-haspopup="true" aria-expanded="false">
+	    FILTER
+	  </button>
+	  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+	    <%= link_to "Car", transports_path(params:{category:"Car"}), class:"dropdown-item" %>
+			<%= link_to "Moto", transports_path(params:{category:"Moto"}), class:"dropdown-item" %>
+			<%= link_to "Rocket", transports_path(params:{category:"Rocket"}), class:"dropdown-item" %>
+			<%= link_to "Bicycle", transports_path(params:{category:"Bicycle"}), class:"dropdown-item" %>
+			<%= link_to "Bus", transports_path(params:{category:"Bus"}), class:"dropdown-item" %>
+			<%= link_to "Trotinette", transports_path(params:{category:"Trotinette"}), class:"dropdown-item" %>
+			<%= link_to "Animals", transports_path(params:{category:"Animals"}), class:"dropdown-item" %>
+			<%= link_to "Others", transports_path(params:{category:"Others"}), class:"dropdown-item" %>
+	  </div>
+	</div>
+</div>
+
 
 <!-- CARDS -->
 <div class="row row-cols-1 row-cols-md-3 g-4 mb-4>

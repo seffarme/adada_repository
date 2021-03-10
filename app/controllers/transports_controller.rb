@@ -2,7 +2,14 @@ class TransportsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
 
   def index
-		@transports = Transport.order(:price)
+
+		if params[:category]
+			@transports = Transport.where('category=?', params[:category])
+			# do some stuf
+		else
+			@transports = Transport.order(:price)
+		end
+		# raise
   end
 
   def show
