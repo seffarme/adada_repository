@@ -1,59 +1,72 @@
 <!-- BANNER -->
 <div class="banner mb-4 d-flex" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.pixabay.com/photo/2017/06/26/08/43/ribblehead-viaduct-2443085_960_720.jpg);">
-    <div class="container">
-      <h1>ADADA brings <strong>you</strong> to <strong>anywhere around the world</strong>!</h1>
-      <p>Live fast, travel fast.</p>
+  <div class="container">
+    <h1>ADADA brings <strong>you</strong> to anywhere around the world</strong>!</h1>
+    <p>Live fast, travel fast.</p>
 
-      <!-- SEARCH FORM -->
-      <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-				<div class="search-form">
-				  <%= link_to "Transports List", "/transports", class: "btn btn-ghost" %>
-        </div>
-      <% end %>
+    <!-- LINK TO INDEX -->
+    <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+      <div class="search-form">
+        <%= link_to "Choose your mount", "/transports", class: "btn btn-ghost" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<!-- CARDS -->
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-4 g-4 mb-4">
+
+    <div class="col mb-4">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.dribbble.com/users/1008875/screenshots/3201250/car2.png?compress=1&resize=800x600)">
+        <%= Transport::CATEGORY[0] %>
+      </div>
     </div>
+
+    <div class="col mb-4">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://us.123rf.com/450wm/iamcitrus/iamcitrus1505/iamcitrus150500034/39988156-rouge-r%C3%A9tro-livraison-mill%C3%A9sime-ic%C3%B4ne-de-moto-isol%C3%A9-sur-fond-blanc.jpg?ver=6)">
+        <%= Transport::CATEGORY[1] %>
+      </div>
+    </div>
+
+    <div class="col mb-4">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://image.freepik.com/free-vector/flat-design-concept-rocket-launch_16734-61.jpg)">
+        <%= Transport::CATEGORY[2] %>
+      </div>
+    </div>
+
+    <div class="col mb-4">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://openclipart.org/image/800px/306314)">
+        <%= Transport::CATEGORY[3] %>
+      </div>
+    </div>
+
+    <div class="col mb-4">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.dribbble.com/users/5119852/screenshots/12115985/shot-cropped-1592418117710.png)">
+        <%= Transport::CATEGORY[4] %>
+      </div>
+    </div>
+
+    <div class="col mb-4">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://st4.depositphotos.com/14953852/30865/v/600/depositphotos_308656896-stock-illustration-scooter-transportation-icon-vector-illustration.jpg)">
+        <%= Transport::CATEGORY[5] %>
+      </div>
+    </div>
+
+    <div class="col mb-4">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.dribbble.com/users/3905073/screenshots/11630732/jack.png)">
+        <%= Transport::CATEGORY[6] %>
+      </div>
+    </div>
+
+    <div class="col mb-4">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://image.freepik.com/free-vector/go-kart-racing-modern-flat-style_6427-162.jpg)">
+        <%= Transport::CATEGORY[7] %>
+      </div>
+    </div>
+
+
   </div>
 
- <!-- CARDS -->
-  <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
-
-    <div class="col">
-      <div class="card h-100">
-        <img src="https://images.unsplash.com/photo-1614640346090-45f7bd78a558?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NTZ8fG1lcmNlZGVzJTIwYW1nfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="car">
-        <div class="card-body">
-          <h5 class="card-title">Car</h5>
-          <p class="card-text">Renting a car is the only way to ride on road 66</p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </div>
-      </div>
-    </div>
-
-    <div class="col">
-      <div class="card h-100">
-        <img src="https://pi.tedcdn.com/r/talkstar-assets.s3.amazonaws.com/production/playlists/playlist_492/rocket_science_1200x627.jpg?quality=89&w=1200" class="card-img-top" alt="rocket">
-        <div class="card-body">
-          <h5 class="card-title">Rocket</h5>
-          <p class="card-text">Flyin' to the moon baby</p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </div>
-      </div>
-    </div>
-
-    <div class="col">
-      <div class="card h-100">
-        <img src="https://images.unsplash.com/photo-1546446391-db74a14ae4cc?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjJ8fHZlbG98ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="bicycle">
-        <div class="card-body">
-          <h5 class="card-title">Bicycle</h5>
-          <p class="card-text">Bike the tour de France</p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </div>
-      </div>
-    </div>
-
-  </div>
+</div>
 

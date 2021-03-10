@@ -1,6 +1,6 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon mb-4">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
     <%= link_to "/", class: "navbar-brand" do %>
-      <i class="fas fa-space-shuttle"></i>
+      <div><i class="fas fa-route"></i><h6>ADADA</h6></div>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,7 +18,10 @@
         <% if current_user %>
         <!-- AVATAR & DROPDOWN MENU-->
           <li class="nav-item dropdown">
-            <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= cl_image_tag current_user.photo.key, :transformation=>[
+              {:width=>400, :height=>400, :gravity=>"face", :radius=>"max", :crop=>"thumb"},
+              {:width=>200, :crop=>"scale"}
+              ], class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <%= link_to "My Account", user_path(current_user.id), class: "dropdown-item" %>
               <%= link_to "Log-out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
@@ -39,4 +42,5 @@
       </ul>
     </div>
   </div>
+  
 
