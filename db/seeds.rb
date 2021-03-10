@@ -90,7 +90,8 @@ rocket = Transport.new({
     category: "Rocket",
     name: "Falcon -X",
     description: "The best rocket you could ever dream of",
-    price: "1000000"}
+    price: "1000000",
+    address: "SpaceX South Texas Launch Site",
 )
 rocket.owner = elon_musk
 rocket.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/falcon_x_rocket.jpg"), filename: 'falcon_x_rocket.jpg', content_type: 'image/png')

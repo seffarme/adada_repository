@@ -1,6 +1,12 @@
 <!-- TITLE -->
 <h1 class="mt-4 mb-4">All means of transportation <span>(<%= @transports.count %>)</span></h1>
 
+<!-- WORLDMAP -->
+<div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
 <!-- CARDS -->
 <div class="row row-cols-1 row-cols-md-3 g-4 mb-4>
     <% @transports.each do |transport| %>
