@@ -22,20 +22,14 @@ require("channels");
 // External imports
 import "bootstrap";
 // $(document).ready(function() {
-	// $(".dropdown-toggle").dropdown();
+// $(".dropdown-toggle").dropdown();
 // });
-
-
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { initMapbox } from "../plugins/init_mapbox";
 import { initFlatpickr } from "../plugins/flatpickr";
 import { changeBookedDatesColor } from "../plugins/customize_date";
-
-const changeDateFlatpickr = document.querySelector(".simple_form");
-console.log(document.querySelector(".flatpickr-month"));
-console.log(changeDateFlatpickr);
 
 document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:

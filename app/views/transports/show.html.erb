@@ -1,40 +1,54 @@
-<!-- TITLE -->
-
 <div class="main_wrapper m-4">
   <div class="row align-items-center justify-content-between">
+
+    <!-- LEFT COLUMN 8 -->
     <div class="col-8">
       <div>
+
+        <!-- SHOW ITEMS -->
         <div class="card-trip mb-4">
-            <h3 id="category-top-right"><%= @transport.category %></h3>
-            <%= cl_image_tag @transport.photo.key, crop: :fill %>
-            <div class="card-trip-infos">
-              <div>
-                <h2><%= @transport.name %></h2>
-                <p><%= @transport.description %></p>
-              </div>
-              <h3 class="card-trip-pricing"><%= number_with_delimiter(@transport.price, :delimiter => ',') %>€</h3>
-              <%= cl_image_tag @transport.owner.photo.key, crop: :fill, class:"card-trip-user avatar-bordered" %>
+
+          <!-- IMG & CATEGORY -->
+          <h3 id="category-top-right"><%= @transport.category %></h3>
+          <%= cl_image_tag @transport.photo.key, crop: :fill %>
+
+          <!-- TEXT INFO -->
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= @transport.name %></h2>
+              <p><%= @transport.description %></p>
             </div>
+            <h3 class="card-trip-pricing"><%= number_with_delimiter(@transport.price, :delimiter => ',') %>€</h3>
+            <%= cl_image_tag @transport.owner.photo.key, crop: :fill, class:"card-trip-user avatar-bordered" %>
+          </div>
         </div>
+
+        <!-- DELETE BUTTON IF CURRENT USER -->
         <div class="text-right">
-        <% if current_user == @transport.owner %>
-          <%= link_to "Delete #{@transport.name}",
-                      transport_path(@transport),
-                      method: :delete,
-                      data: { confirm: "Are you sure?" },
-                      class:"btn btn-outline-danger btn-sm w-25" %>
-        <% end %>
+          <% if current_user == @transport.owner %>
+            <%= link_to "Delete #{@transport.name}",
+                        transport_path(@transport),
+                        method: :delete,
+                        data: { confirm: "Are you sure?" },
+                        class:"btn btn-outline-danger btn-sm w-25" %>
+          <% end %>
         </div>
+
+
       </div>
     </div>
 
+    <!-- RIGHT COLUMN 4 -->
     <div class="col-4">
-    <%= render "transports/form_booking" %>
+
+      <!-- BOOKING CALENDAR FORM & CART -->
+      <%= render "transports/form_booking" %>      
+
     </div>
 
   </div>
 
 </div>
 
-
+<!-- RENDER MODAL WHEN BOOKING -->
 <%= render "transports/modal_booking" %>
