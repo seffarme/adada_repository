@@ -12,7 +12,7 @@
               <%= link_to "Book another transport", transports_path(@transports)%>
             </div>
             <div class="modal-footer" >
-              <button type="button" class="btn btn-default" id="a" data-dismiss="modal">Close</button>
+              <%= link_to 'Close', transport_path(@transport)  %>
             </div>
           </div>
         </div>
