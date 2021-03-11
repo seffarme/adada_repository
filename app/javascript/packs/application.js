@@ -21,6 +21,10 @@ require("channels")
 
 // External imports
 import "bootstrap";
+$(document).ready(function() {
+	$(".dropdown-toggle").dropdown();
+});
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
