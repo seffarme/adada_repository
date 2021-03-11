@@ -5,17 +5,18 @@
 	<!-- TRI -->
 	<div class="dropdown">
 	  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" 	aria-haspopup="true" aria-expanded="false">
-	    FILTER
+	    CATEGORY
 	  </button>
 	  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-	    <%= link_to "Car", transports_path(params:{category:"Car"}), class:"dropdown-item" %>
-			<%= link_to "Moto", transports_path(params:{category:"Moto"}), class:"dropdown-item" %>
-			<%= link_to "Rocket", transports_path(params:{category:"Rocket"}), class:"dropdown-item" %>
-			<%= link_to "Bicycle", transports_path(params:{category:"Bicycle"}), class:"dropdown-item" %>
-			<%= link_to "Bus", transports_path(params:{category:"Bus"}), class:"dropdown-item" %>
-			<%= link_to "Trotinette", transports_path(params:{category:"Trotinette"}), class:"dropdown-item" %>
-			<%= link_to "Animals", transports_path(params:{category:"Animals"}), class:"dropdown-item" %>
-			<%= link_to "Others", transports_path(params:{category:"Others"}), class:"dropdown-item" %>
+		  <%= link_to "All", transports_path, class:"dropdown-item" %>
+	    <%= link_to "#{Transport::CATEGORY[0]}", transports_path(params:{category:"#{Transport::CATEGORY[0]}"}), class:"dropdown-item" %>
+			<%= link_to "#{Transport::CATEGORY[1]}", transports_path(params:{category:"#{Transport::CATEGORY[1]}"}), class:"dropdown-item" %>
+			<%= link_to "#{Transport::CATEGORY[2]}", transports_path(params:{category:"#{Transport::CATEGORY[2]}"}), class:"dropdown-item" %>
+			<%= link_to "#{Transport::CATEGORY[3]}", transports_path(params:{category:"#{Transport::CATEGORY[3]}"}), class:"dropdown-item" %>
+			<%= link_to "#{Transport::CATEGORY[4]}", transports_path(params:{category:"#{Transport::CATEGORY[4]}"}), class:"dropdown-item" %>
+			<%= link_to "#{Transport::CATEGORY[5]}", transports_path(params:{category:"#{Transport::CATEGORY[5]}"}), class:"dropdown-item" %>
+			<%= link_to "#{Transport::CATEGORY[6]}", transports_path(params:{category:"#{Transport::CATEGORY[6]}"}), class:"dropdown-item" %>
+			<%= link_to "#{Transport::CATEGORY[7]}", transports_path(params:{category:"#{Transport::CATEGORY[7]}"}), class:"dropdown-item" %>
 	  </div>
 	</div>
 </div>
@@ -33,7 +34,7 @@
       <div class="col mb-4">
         <div class="card h-100">
           <h3 id="category-top-right"><%= transport.category %></h3>
-          <%= cl_image_tag transport.photo.key, crop: :fill, class:"card-img-top" %>
+          <%= cl_image_tag transport.photo.key, crop: :fill, class:"h-50" %>
           <div class="card-body">
             <h5 class="card-title"><%= link_to transport.name, transport_path(transport) %></h5>
             <p class="card-text bold"><%= number_with_delimiter(transport.price, :delimiter => ',') %>€/day</p>

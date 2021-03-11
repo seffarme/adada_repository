@@ -4,12 +4,32 @@
     <h1>ADADA brings <strong>you</strong> to anywhere around the world</strong>!</h1>
     <p>Live fast, travel fast.</p>
 
-    <!-- LINK TO INDEX -->
-    <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-      <div class="search-form">
-        <%= link_to "Choose your mount", "/transports", class: "btn btn-ghost" %>
+    <%= form_tag transports_path, method: :get do %>
+
+    <div class="wrap-banner">
+      <div class="row justify-content-start search-form-control form-group">
+        <div class="col-6">
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find a mean of transport"
+          %>
+        </div>
+        <div>
+          <%= submit_tag "Search", class: "btn btn-ghost" %>
+        </div>
+        <% end %>
       </div>
-    <% end %>
+      <div class="row justify-content-start ml-1">
+        <p><%= link_to "All the mounts", "/transports", class: "btn btn-ghost mr-3" %></p>
+        <p><%= link_to "Choose for me", random_transports_path, class: "btn btn-ghost" %></p>
+      </div>
+    </div>
+    </form>
+  </div>
+
+
+    <!-- LINK TO INDEX -->
   </div>
 </div>
 
@@ -19,54 +39,50 @@
 
     <div class="col mb-4">
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.dribbble.com/users/1008875/screenshots/3201250/car2.png?compress=1&resize=800x600)">
-        <%= Transport::CATEGORY[0] %>
+				<%= link_to "#{Transport::CATEGORY[0]}", transports_path(params:{category:"#{Transport::CATEGORY[0]}"})%>
       </div>
     </div>
 
     <div class="col mb-4">
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://us.123rf.com/450wm/iamcitrus/iamcitrus1505/iamcitrus150500034/39988156-rouge-r%C3%A9tro-livraison-mill%C3%A9sime-ic%C3%B4ne-de-moto-isol%C3%A9-sur-fond-blanc.jpg?ver=6)">
-        <%= Transport::CATEGORY[1] %>
+				<%= link_to "#{Transport::CATEGORY[1]}", transports_path(params:{category:"#{Transport::CATEGORY[1]}"})%>
       </div>
     </div>
 
     <div class="col mb-4">
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://image.freepik.com/free-vector/flat-design-concept-rocket-launch_16734-61.jpg)">
-        <%= Transport::CATEGORY[2] %>
+				<%= link_to "#{Transport::CATEGORY[2]}", transports_path(params:{category:"#{Transport::CATEGORY[2]}"})%>
       </div>
     </div>
 
     <div class="col mb-4">
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://openclipart.org/image/800px/306314)">
-        <%= Transport::CATEGORY[3] %>
+				<%= link_to "#{Transport::CATEGORY[3]}", transports_path(params:{category:"#{Transport::CATEGORY[3]}"})%>
       </div>
     </div>
 
     <div class="col mb-4">
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.dribbble.com/users/5119852/screenshots/12115985/shot-cropped-1592418117710.png)">
-        <%= Transport::CATEGORY[4] %>
+				<%= link_to "#{Transport::CATEGORY[4]}", transports_path(params:{category:"#{Transport::CATEGORY[4]}"})%>
       </div>
     </div>
 
     <div class="col mb-4">
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://st4.depositphotos.com/14953852/30865/v/600/depositphotos_308656896-stock-illustration-scooter-transportation-icon-vector-illustration.jpg)">
-        <%= Transport::CATEGORY[5] %>
+				<%= link_to "#{Transport::CATEGORY[5]}", transports_path(params:{category:"#{Transport::CATEGORY[5]}"})%>
       </div>
     </div>
 
     <div class="col mb-4">
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.dribbble.com/users/3905073/screenshots/11630732/jack.png)">
-        <%= Transport::CATEGORY[6] %>
+				<%= link_to "#{Transport::CATEGORY[6]}", transports_path(params:{category:"#{Transport::CATEGORY[6]}"})%>
       </div>
     </div>
 
     <div class="col mb-4">
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://image.freepik.com/free-vector/go-kart-racing-modern-flat-style_6427-162.jpg)">
-        <%= Transport::CATEGORY[7] %>
+				<%= link_to "#{Transport::CATEGORY[7]}", transports_path(params:{category:"#{Transport::CATEGORY[7]}"})%>
       </div>
     </div>
-
-
   </div>
-
 </div>
-

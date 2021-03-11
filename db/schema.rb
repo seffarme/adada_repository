@@ -56,8 +56,6 @@ ActiveRecord::Schema.define(version: 2021_03_10_100247) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "category"
     t.string "address"
-    t.string "city"
-    t.string "country"
     t.float "latitude"
     t.float "longitude"
     t.index ["owner_id"], name: "index_transports_on_owner_id"
