@@ -10,6 +10,8 @@
 ##########################################################################################################
 # CLEANING
 
+puts "Cleaning the booking DB ..."
+Booking.destroy_all
 
 puts "Cleaning the transport DB ..."
 Transport.destroy_all
