@@ -1,4 +1,38 @@
 <!-- TITLE -->
+<div class="card-trip mb-4">
+    <h3 id="category-top-right"><%= @transport.category %></h3>
+    <%= cl_image_tag @transport.photo.key, crop: :fill %>
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= @transport.name %></h2>
+        <p><%= @transport.description %></p>
+      </div>
+      <h3 class="card-trip-pricing"><%= number_with_delimiter(@transport.price, :delimiter => ',') %>€</h3>
+      <%= cl_image_tag @transport.owner.photo.key, crop: :thumb, class:"card-trip-user avatar-bordered" %>
+
+
+    </div>
+
+<div class="text-center" >
+  <% if @available %>
+    <button type="button" class="btn btn-info btn-lg m-3" data-toggle="modal" data-target="#myModal" btn.disabled = true> Book Now </button>
+    <div class="modal fade" id="myModal" role="dialog" >
+      <div class="modal-dialog" class="text-center">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-body">
+            <p>Your booking is confirmed. Thank you</p>
+          </div>
+          <div class="">
+            <div class="d-flex justify-content-around align-items-center">
+              <div>
+               <%= link_to "Book another transport", transports_path(@transports)%>
+              </div>
+              <div class="modal-footer" >
+                <button type="button" class="btn btn-default" id="a" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+
 
 <div class="main_wrapper m-4">
   <div class="row align-items-center justify-content-between">
@@ -32,7 +66,7 @@
               transport_path(@transport),
               method: :delete,
               data: { confirm: "Are you sure?" },
-              class:"btn btn-danger" %>
+              class:"btn btn-light" %>
 <% end %>
 
 <%= render "transports/modal_booking" %>
