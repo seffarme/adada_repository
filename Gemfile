@@ -62,6 +62,7 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'devise'
 gem 'simple_form'
-gem 'dotenv-rails', groups: %i[development test]
+gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'
+gem "simple_calendar", "~> 2.0"
 gem 'geocoder'
