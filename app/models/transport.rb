@@ -19,4 +19,16 @@ class Transport < ApplicationRecord
   # Geocoding
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+
+  # PG search
+  include PgSearch::Model
+  scope :sorted, ->{ order(name: :asc) }
+  pg_search_scope :search_by_name_description_city_country,
+    against: [ :name, :description, :category, :address],
+    using: {
+      tsearch: { prefix: true }
+    }
+
+
+
 end

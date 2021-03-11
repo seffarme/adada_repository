@@ -18,7 +18,7 @@ const initMapbox = () => {
     // Build map
     const map = new mapboxgl.Map({
       container: "map",
-      style: "mapbox://styles/mth0158/ckm3avidmbyxv17p6nblhiovz",
+      style: "mapbox://styles/mth0158/ckm4owxrbdb3a17ljdoezz7qb",
     });
 
     // Create markers

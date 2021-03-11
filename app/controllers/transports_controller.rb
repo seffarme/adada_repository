@@ -4,13 +4,21 @@ class TransportsController < ApplicationController
   def index
 		if params[:category]
 			@transports = Transport.where('category=?', params[:category])
-			# do some stuf
-		else
+
+    elsif params[:query].present?
+
+      if @transports = Transport.search_by_name_description_city_country(params[:query]) == []
+        @transports = Transport.order(:price)
+      else
+        @transports = Transport.search_by_name_description_city_country(params[:query])
+      end
+
+    else
 			@transports = Transport.order(:price)
 		end
-		# raise
-    
-    # Geocoding
+
+
+    # # Geocoding
     @markers = @transports.geocoded.map do |transport|
       {
         lat: transport.latitude,
@@ -22,7 +30,7 @@ class TransportsController < ApplicationController
 
   def show
     @transport = Transport.find(params[:id])
-    @bookings       = Booking.where(transport_id: @transport.id)
+    @bookings = Booking.where(transport_id: @transport.id)
     @booking = Booking.new
     @bookings_dates = @bookings.map do |booking|
       {
@@ -55,6 +63,21 @@ class TransportsController < ApplicationController
     redirect_to transports_path
   end
 
+  def random
+    @id = Transport.all.sample.id
+    @transport = Transport.find(@id)
+    @bookings = Booking.where(transport_id: @id)
+    @booking = Booking.new
+    @bookings_dates = @bookings.map do |booking|
+      {
+        from: booking.start_date,
+        to:   booking.end_date
+      }
+    end
+
+    @available = true
+
+  end
   private
 
   def transport_params
