@@ -1,8 +1,10 @@
 
-<div class="card-avatar mt-10 mb-4">
+<div class="card-avatar mt-8 mb-4">
   <div class="card-avatar-picture row g-0">
     <div class="profile col-md-4"><%= cl_image_tag(@user.photo.key, :transformation=>[
-      {:width=>100, :height=>100, :gravity=>"face", :radius=>"max", :crop=>"thumb", :format=>"png"}])
+      {:width=>100, :height=>100, :gravity=>"face", :radius=>"max", :crop=>"thumb"},
+      {:width=>100, :crop=>"scale"}
+      ])
     %>
     </div>
     <div class="row col-md-8">
@@ -32,13 +34,6 @@
             <p><%= transport.description %></p>
             <p><i><i class="fas fa-map-marker-alt"></i> <%= transport.description %></i></p>
             <p class="card-product-price"><b><%= number_with_delimiter(transport.price, :delimiter => ',') %>€/day</b></p>
-          </div>
-          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <%= link_to "Delete #{transport.name}",
-                transport_path(transport),
-                method: :delete,
-                data: { confirm: "Are you sure?" },
-                class:"btn btn-link" %>
           </div>
         </div>
       </div>
