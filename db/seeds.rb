@@ -197,7 +197,7 @@ tracteur.save
 
 tricycle = Transport.new( {
     category: "Bicycle",
-    name: "tricycle",
+    name: "Tricycle",
     description: "Feel like a kid and dream big on your red bike",
     price: "15",
     address: "Childhood Home of Ringo Starr, 9 Madryn St, Liverpool, England L8 3UQ, United Kingdom"

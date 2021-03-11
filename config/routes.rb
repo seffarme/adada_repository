@@ -4,9 +4,6 @@ Rails.application.routes.draw do
 
   resources :transports do
     resources :bookings, only: [:new, :create]
-    collection do
-      get :random
-    end
   end
 
 

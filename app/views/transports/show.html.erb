@@ -6,7 +6,7 @@
       <div>
         <div class="card-trip mb-4">
             <h3 id="category-top-right"><%= @transport.category %></h3>
-            <%= cl_image_tag @transport.photo.key, crop: :fill %>
+            <%= cl_image_tag @transport.photo.key, crop: :thumb %>
             <div class="card-trip-infos">
               <div>
                 <h2><%= @transport.name %></h2>
