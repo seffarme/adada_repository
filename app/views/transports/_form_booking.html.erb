@@ -1,9 +1,14 @@
 <div class="row text-center ml-4" class="form-wrapper" id="booking-form-div" data-bookings="<%= @bookings_dates.to_json %>">
+
   <%= simple_form_for [@transport, @booking] do |f| %>
+
     <h4>Book your Transport</h4>
+
     <%= f.input :start_date, label: "Sélectionnez vos dates:", as: :string, required: false, input_html: { id: "range_start", class: "d-none"} %>
     <%= f.input :end_date, label: false, as: :string, required: false, input_html: { id: "range_end", class: "d-none" } %>
-      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" btn.disabled = true>   <%= f.button :submit, "Book Now" %>
-      </button>
+
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" btn.disabled = true>   <%= f.button :submit, "Book Now" %>
+    </button>
+    
   <% end %>
 </div>
