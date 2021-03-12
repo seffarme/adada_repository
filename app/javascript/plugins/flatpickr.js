@@ -3,10 +3,9 @@ import "flatpickr/dist/themes/airbnb.css"; // Note this is important!
 import rangePlugin from "flatpickr/dist/plugins/rangePlugin";
 import { changeBookedDatesColor } from "./customize_date";
 
-const pricePerDay = document.querySelector(".card-trip-pricing");
-const myCart = document.querySelector("#my-cart");
-
 const initFlatpickr = () => {
+  const pricePerDay = document.querySelector(".card-trip-pricing");
+  const myCart = document.querySelector("#my-cart");
   const bookingForm = document.getElementById("booking-form-div");
 
   if (bookingForm) {
