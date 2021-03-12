@@ -29,6 +29,20 @@ class Transport < ApplicationRecord
       tsearch: { prefix: true }
     }
 
+  def count_reserved_days
+    total = 0
+    bookings.each do |booking|
+      total += (booking.end_date - booking.start_date).to_i + 1
+    end
+    total
+  end
 
+  def count_reserved_numbers
+    total = 0
+    bookings.each do |booking|
+      total += 1
+    end
+    total
+  end
 
 end
