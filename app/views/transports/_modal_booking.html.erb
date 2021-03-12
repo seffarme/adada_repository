@@ -4,15 +4,17 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-body">
-          <p>Your booking is confirmed. Thank you</p>
+          <p class="pt-3 text-success"><strong>Congratulation your booking is confirmed 👍</strong></p>
+          <p class="text-success"><strong>Thank you</strong></p>
+          <p id="price-modal">Total price paid is </p>
         </div>
         <div class="">
           <div class="d-flex justify-content-around align-items-center">
             <div>
-              <%= link_to "Book another transport", transports_path(@transports)%>
+              <%= link_to "Book another transport 🚀", transports_path(@transports)%>
             </div>
             <div class="modal-footer" >
-              <%= link_to 'Close', transport_path(@transport)  %>
+              <%= link_to 'Close  ☓', transport_path(@transport)  %>
             </div>
           </div>
         </div>
