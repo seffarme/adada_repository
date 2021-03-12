@@ -120,7 +120,7 @@ bike = Transport.new( {
 }
 )
 bike.owner = elon_musk
-bike.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/decathlon_bicycle.jpg"), filename: 'decathlon_bicycle.jpg', content_type: 'image/jpg')
+bike.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/urban.webp"), filename: 'urban.webp', content_type: 'image/jpg')
 bike.save
 
 angell = Transport.new( {
@@ -231,7 +231,380 @@ kit.owner = mario
 kit.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/kit.jpg"), filename: 'kit.jpg', content_type: 'image/jpg')
 kit.save
 
+speed = Transport.new( {
+    category: "Motorcycle",
+    name: "Damon Motorcycle",
+    description: "Speed with style and travel with class",
+    price: "80",
+    address: "Paris, France"
+}
+)
+speed.owner = mario
+speed.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/speed.jpg"), filename: 'speed.jpg', content_type: 'image/jpg')
+speed.save
+
+soft = Transport.new( {
+    category: "Motorcycle",
+    name: "ARCH Motorcycle",
+    description: "soft with delicacy",
+    price: "60",
+    address: "Ottawa, Canada"
+}
+)
+soft.owner = mario
+soft.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/soft.jpg"), filename: 'soft.jpg',
+content_type: 'image/jpg')
+soft.save
+
+gorgeous = Transport.new( {
+    category: "Motorcycle",
+    name: "Forbes",
+    description: "We can't wait to ride",
+    price: "150",
+    address: "London, United Kingdom"
+}
+)
+gorgeous.owner = mario
+gorgeous.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/gorgeous.jpg"), filename: 'gorgeous.jpg',
+content_type: 'image/jpg')
+gorgeous.save
+
+lite = Transport.new( {
+    category: "Motorcycle",
+    name: "Parallel Twin",
+    description: "Lightweight, affordable, practical, and with a cool look ",
+    price: "100",
+    address: "Beverly, USA"
+}
+)
+lite.owner = mario
+lite.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/lite.jpg"), filename: 'lite.jpg',
+content_type: 'image/jpg')
+lite.save
+
+famous = Transport.new( {
+    category: "Motorcycle",
+    name: "AMB 001",
+    description: "One of the most striking design features is the Oxford Tan saddle",
+    price: "150",
+    address: "Aberdeen, British"
+}
+)
+famous.owner = mario
+famous.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/famous.jpg"), filename: 'famous.jpg',
+content_type: 'image/jpg')
+famous.save
+
+adorable = Transport.new({
+    category: "Rocket",
+    name: "Mini rocket",
+    description: "The little rocket from Rocket Factory will leave you speechless.",
+    price: "560000",
+    address: "Augsburg in Bavaria",
+})
+adorable.owner = elon_musk
+adorable.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/adorable.jpg"), filename:
+'adorable.jpg', content_type: 'image/png')
+adorable.save
+
+amaising = Transport.new({
+    category: "Rocket",
+    name: "RS-25 engines",
+    description: "What could be more beautiful than NASA's newest moon?",
+    price: "2000000",
+    address: "NASA's Site",
+})
+amaising.owner = elon_musk
+amaising.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/amaising.webp"), filename:
+'amaising.webp', content_type: 'image/png')
+amaising.save
+
+fabulous = Transport.new({
+    category: "Rocket",
+    name: "Pink Rocket",
+    description: "Let yourself be carried away by the beauty and design",
+    price: "500000",
+    address: "Mexico, South America",
+})
+fabulous.owner = elon_musk
+fabulous.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/fabulous.jpg"), filename:
+'fabulous.jpg', content_type: 'image/png')
+fabulous.save
+
+splandide = Transport.new({
+    category: "Rocket",
+    name: "Starship Hopper",
+    description: "The latest incarnation of the spaceship will make you dream",
+    price: "1500000",
+    address: "FrancFort",
+})
+splandide.owner = elon_musk
+splandide.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/splandide.jpg"), filename:
+'splandide.jpg', content_type: 'image/png')
+splandide.save
+
+rigide = Transport.new( {
+    category: "Bicycle",
+    name: "VTT rigide adulte Cliff 700",
+    description: "This mountain bike is fully accessorizable, compatible with kickstand, luggage rack and baby carrier.",
+    price: "20",
+    address: "Lyon"
+}
+)
+rigide.owner = elon_musk
+rigide.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/rigide.png"), filename: 'rigide.png',
+content_type: 'image/jpg')
+rigide.save
+
+van = Transport.new( {
+    category: "Bicycle",
+    name: "VanMoof S3",
+    description: "A classic rectilinear architecture, which houses all the technological innovations.",
+    price: "50",
+    address: "Paris"
+}
+)
+van.owner = elon_musk
+van.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/van.jpg"), filename: 'van.jpg',
+content_type: 'image/jpg')
+van.save
+
+vtt = Transport.new( {
+    category: "Bicycle",
+    name: "LANKELEISI XT750",
+    description: "Electric bike folding bike 80 km maximum load 120 kg with eu plug - Yellow",
+    price: "30",
+    address: "Angers"
+}
+)
+vtt.owner = elon_musk
+vtt.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/vtt.webp"), filename: 'vtt.webp',
+content_type: 'image/jpg')
+vtt.save
+
+bus_electrique = Transport.new( {
+    category: "Bus",
+    name: "E-bus espagnols",
+    description: "we want to do away with the cubic shape of buses, so opt for an electric and ecological model. ",
+    price: "2000",
+    address: "Orleans Metropolis"
+}
+)
+bus_electrique.owner = kimi_raikkonen
+bus_electrique.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/bus_electrique.webp"), filename: 'bus_electrique.webp',
+content_type: 'image/jpg')
+bus_electrique.save
+
+charter_Bus = Transport.new( {
+    category: "Bus",
+    name: "Bus 500-C",
+    description: "This is a difficult time to travel and this bus will engage you to make this time easier than ever",
+    price: "1000",
+    address: "British"
+}
+)
+charter_Bus.owner = kimi_raikkonen
+charter_Bus.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/charter_Bus.jpg"), filename:'charter_Bus.jpg',
+content_type: 'image/jpg')
+charter_Bus.save
+
+e_bus = Transport.new( {
+    category: "Bus",
+    name: "IRIZAR",
+    description: "Lighting the road",
+    price: "500",
+    address: "Francfort"
+}
+)
+e_bus.owner = kimi_raikkonen
+e_bus.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/e_bus.jpg"), filename:'e_bus.jpg',
+content_type: 'image/jpg')
+e_bus.save
+
+hybride = Transport.new( {
+    category: "Bus",
+    name: "Iveco",
+    description: "Let yourself be carried away by a bus equipped with air conditioning, video protection and USB ports",
+    price: "300",
+    address: "Paris"
+}
+)
+hybride.owner = kimi_raikkonen
+hybride.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/hybride.jpg"), filename:
+'hybride.jpg',
+content_type: 'image/jpg')
+hybride.save
+
+transport = Transport.new( {
+    category: "Bus",
+    name: "Optymo",
+    description: "A choice motivated by an ecological ambition.",
+    price: "1500",
+    address: "London"
+}
+)
+transport.owner = kimi_raikkonen
+transport.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/transport.jpg"), filename:'transport.jpg',
+content_type: 'image/jpg')
+transport.save
+
+tadao = Transport.new( {
+    category: "Bus",
+    name: "Tadoa",
+    description: "Like the lithium-ion battery buses, they run without any polluting emissions",
+    price: "300",
+    address: "Yvelines, Pas-de-Calais and Pau"
+}
+)
+tadao.owner = kimi_raikkonen
+tadao.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/tadao.webp"), filename:'tadao.webp',content_type: 'image/jpg')
+tadao.save
+
+echappement = Transport.new( {
+    category: "Scooter",
+    name: "YASUNI Scooter 4",
+    description: "This scooter offers a sporty look and more torque than the original versions",
+    price: "50",
+    address: "Marseilles, France"
+})
+echappement.owner = monsieur_patate
+echappement.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/echappement.jpg"), filename: 'echappement.jpg', content_type: 'image/jpg')
+echappement.save
+
+little = Transport.new( {
+    category: "Scooter",
+    name: "Draisienne scooter",
+    description: "Love rinding",
+    price: "15",
+    address: "Barcelona, Spain"
+})
+little.owner = monsieur_patate
+little.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/little.jpg"), filename:'little.jpg', content_type: 'image/jpg')
+little.save
+
+lycke = Transport.new( {
+    category: "Scooter",
+    name: "Lycke Retro50",
+    description: "Peaceful stroll",
+    price: "20",
+    address: "Lyon, France"
+})
+lycke.owner = monsieur_patate
+lycke.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/lycke.jpg"), filename:'lycke.jpg', content_type: 'image/jpg')
+lycke.save
+
+orion = Transport.new( {
+    category: "Scooter",
+    name: "Orion Pro",
+    description: "Pleasant, safe and fast driving",
+    price: "25",
+    address: "Aix-en-provence, France"
+})
+orion.owner = monsieur_patate
+orion.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/orion.jpg"), filename:'orion.jpg', content_type: 'image/jpg')
+orion.save
+
+scooter_electrique = Transport.new( {
+    category: "Scooter",
+    name: "VERMEIREN Ceres 4 SE",
+    description: "This comfortable and very practical Vermeiren SE electric scooter has adjustable handlebars, a front basket and front/rear shocks.",
+    price: "100",
+    address: "Hamm, Germany"
+})
+scooter_electrique.owner = monsieur_patate
+scooter_electrique.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/scooter_electrique.jpg"), filename:'scooter_electrique.jpg', content_type: 'image/jpg')
+scooter_electrique.save
+
+rose = Transport.new( {
+    category: "Scooter",
+    name: "Homcom Moto",
+    description: "Make your children even happier",
+    price: "20",
+    address: "London, UK"
+})
+rose.owner = monsieur_patate
+rose.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/rose.webp"), filename:'rose.webp',
+content_type: 'image/jpg')
+rose.save
 puts "Created #{Transport.count} transports"
+
+chat = Transport.new( {
+    category: "Animal",
+    name: "Eliote",
+    description: "Even more softness",
+    price: "100",
+    address: "Versailles"
+}
+)
+chat.owner = kimi_raikkonen
+chat.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/chat.jpg"), filename:'chat.jpg', content_type: 'image/jpg')
+chat.save
+
+chien = Transport.new( {
+    category: "Animal",
+    name: "Cabotin",
+    description: "Your pet is your friend",
+    price: "200",
+    address: "Australia"
+}
+)
+chien.owner = kimi_raikkonen
+chien.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/chien.jpg"), filename:'chien.jpg', content_type: 'image/jpg')
+chien.save
+
+panda = Transport.new( {
+    category: "Animal",
+    name: "Gewa",
+    description: "A rare animal, a unique animal ",
+    price: "500",
+    address: "New-York"
+}
+)
+panda.owner = kimi_raikkonen
+panda.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/panda.jpg"), filename:'panda.jpg', content_type: 'image/jpg')
+panda.save
+
+tigre = Transport.new( {
+    category: "Animal",
+    name: "Asha",
+    description: "Discover the most beautiful species of the forest",
+    price: "600",
+    address: "Agadir, Morocco"
+}
+)
+tigre.owner = kimi_raikkonen
+tigre.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/tigre.jpg"), filename:'tigre.jpg',content_type: 'image/jpg')
+tigre.save
+
+zebre = Transport.new( {
+    category: "Animal",
+    name: "Luna",
+    description: "This animal with exotic colors will carry you in a magnificent universe",
+    price: "500",
+    address: "Agadir, Morocco"
+}
+)
+zebre.owner = kimi_raikkonen
+zebre.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/zebre.jpg"), filename:
+'zebre.jpg',
+content_type: 'image/jpg')
+zebre.save
+
+boo = Transport.new( {
+    category: "Animal",
+    name: "Attila",
+    description: "This little being will make your days more beautiful",
+    price: "400",
+    address: "Alpes"
+}
+)
+boo.owner = kimi_raikkonen
+boo.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/boo.webp"), filename:
+'boo.webp',
+content_type: 'image/jpg')
+boo.save
+
+
 
 
 #   Character.create(name: 'Luke', movie: movies.first)
