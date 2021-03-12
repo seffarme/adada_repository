@@ -19,40 +19,53 @@
 </div>
 
 
-<!-- OWN -->
-<div class="mt-8 mb-4 ml-4">
-  <h3><i class="fas fa-chevron-circle-down"></i>  I own</h3>
-    <% @user.transports.each do |transport| %>
-    <div class="col mb-2">
-      <div class="card-product">
-          <%= cl_image_tag transport.photo.key, crop: :fill, class:"card-img-top" %>
-          <div class="card-product-infos">
-            <h2><%=transport.name%></h2>
-            <p><%= transport.description %></p>
-            <p><i><i class="fas fa-map-marker-alt"></i> <%= transport.description %></i></p>
-            <p class="card-product-price"><b><%= number_with_delimiter(transport.price, :delimiter => ',') %>€/day</b></p>
-          </div>
-        </div>
-      </div>
-    <% end %>
-</div>
-
-
 <!-- BOOKED-->
 
 <div class="mt-8 mb-4 ml-4">
-  <h3><i class="fas fa-chevron-circle-down"></i>  I have booked</h3>
-    <% @bookings.each do |booking| %>
-    <div class="col mb-2">
-      <div class="card-product">
-          <%= cl_image_tag booking.transport.photo.key, crop: :fill, class:"card-img-top" %>
-          <div class="card-product-infos">
-            <h2><%=booking.transport.name%></h2>
-            <p><%= booking.transport.description %></p>
-            <p><i><i class="fas fa-map-marker-alt"></i> <%= booking.transport.description %></i></p>
-            <p class="card-product-price"><b><%= number_with_delimiter(booking.transport.price, :delimiter => ',') %>€/day</b></p>
+  <h3><i class="fas fa-chevron-circle-down ml-4"></i>  I have booked</h3>
+    <% if @bookings == []%>
+      <div class="card text-center card-body">
+        <h5 class="mb-4">Nothing booked yet </h5>
+        <p><%= link_to "Choose your mount", "/transports", class: "btn btn-primary mr-3" %></p>
+      </div>
+    <% else @bookings.each do |booking| %>
+      <div class="col mb-2">
+        <div class="card-product">
+            <%= cl_image_tag booking.transport.photo.key, crop: :fill, class:"card-img-top" %>
+            <div class="card-product-infos">
+              <h2><%=booking.transport.name%></h2>
+              <p><%= booking.transport.description %></p>
+              <p><i><i class="fas fa-map-marker-alt"></i> <%= booking.transport.description %></i></p>
+              <p class="card-product-price"><b><%= number_with_delimiter(booking.transport.price, :delimiter => ',') %>€/day</b></p>
+            </div>
           </div>
         </div>
+      <% end %>
+    <%end%>
+</div>
+
+
+<!-- OWN -->
+<div class="mt-8 mb-4 ml-4">
+  <h3><i class="fas fa-chevron-circle-down ml-4"></i>  I own</h3>
+    <% if @user.transports == []%>
+      <div class="card text-center card-body">
+        <h5 class="mb-4"> Add your favorite mount on Adada and make money </h5>
+        <p><%= link_to "Add a transport", new_transport_path, class: "btn btn-primary" %></p>
       </div>
-    <% end %>
+    <% else %>
+      <% @user.transports.each do |transport| %>
+        <div class="col mb-2">
+          <div class="card-product">
+              <%= cl_image_tag transport.photo.key, crop: :fill, class:"card-img-top" %>
+              <div class="card-product-infos">
+                <h2><%=transport.name%></h2>
+                <p><%= transport.description %></p>
+                <p><i><i class="fas fa-map-marker-alt"></i> <%= transport.description %></i></p>
+                <p class="card-product-price"><b><%= number_with_delimiter(transport.price, :delimiter => ',') %>€/day</b></p>
+              </div>
+            </div>
+          </div>
+      <% end %>
+    <% end%>
 </div>

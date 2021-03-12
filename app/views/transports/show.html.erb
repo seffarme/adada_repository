@@ -19,7 +19,7 @@
               <p><%= @transport.description %></p>
             </div>
             <h3 class="card-trip-pricing"><%= number_with_delimiter(@transport.price, :delimiter => ',') %>€</h3>
-            <%= cl_image_tag @transport.owner.photo.key, crop: :fill, class:"card-trip-user avatar-bordered" %>
+            <%= cl_image_tag @transport.owner.photo.key, gravity: :face, crop: :thumb, class:"card-trip-user avatar-bordered" %>
           </div>
         </div>
 
@@ -42,7 +42,7 @@
     <div class="col-4">
 
       <!-- BOOKING CALENDAR FORM & CART -->
-      <%= render "transports/form_booking" %>      
+      <%= render "transports/form_booking" %>
 
     </div>
 
