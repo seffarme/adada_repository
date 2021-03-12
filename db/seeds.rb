@@ -479,7 +479,7 @@ little = Transport.new( {
     address: "Barcelona, Spain"
 })
 little.owner = monsieur_patate
-little.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/little.jpg"), filename:'little.jpg', content_type: 'image/jpg')
+little.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/scooter1.jpg"), filename:'scooter1.jpg', content_type: 'image/jpg')
 little.save
 
 lycke = Transport.new( {
@@ -492,17 +492,6 @@ lycke = Transport.new( {
 lycke.owner = monsieur_patate
 lycke.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/lycke.jpg"), filename:'lycke.jpg', content_type: 'image/jpg')
 lycke.save
-
-orion = Transport.new( {
-    category: "Scooter",
-    name: "Orion Pro",
-    description: "Pleasant, safe and fast driving",
-    price: "25",
-    address: "Aix-en-provence, France"
-})
-orion.owner = monsieur_patate
-orion.photo.attach(io: File.open("#{Rails.root}/app/assets/images/seeds/orion.jpg"), filename:'orion.jpg', content_type: 'image/jpg')
-orion.save
 
 scooter_electrique = Transport.new( {
     category: "Scooter",
