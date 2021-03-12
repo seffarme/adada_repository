@@ -4,7 +4,7 @@ import rangePlugin from "flatpickr/dist/plugins/rangePlugin";
 import { changeBookedDatesColor } from "./customize_date";
 
 const initFlatpickr = () => {
-  const pricePerDay = document.querySelector(".card-trip-pricing");
+  const transportData = document.querySelector("#transport");
   const myCart = document.querySelector("#my-cart");
   const bookingForm = document.getElementById("booking-form-div");
 
@@ -33,18 +33,19 @@ const initFlatpickr = () => {
       const days = Math.ceil(difference / (1000 * 3600 * 24));
 
       // Price
-      const pricePerDayValue = pricePerDay.innerHTML.slice(0, -1);
+      const pricePerDayValue = transportData.dataset.price;
+      console.log(pricePerDayValue);
 
       // Total
       const totalPrice = (days + 1) * pricePerDayValue;
 
       // Generated HTML to be inserted in DOM
       const cartHTML = `
-      <div class="d-flex justify-content-between align-items-center">
-        <p class="ml-3"><span>${
+      <div class="text-left">
+        <p class="mt-2 ml-4"><span>${
           days + 1
         }</span> days * <span>${pricePerDayValue}</span>€</p>
-        <p class="mr-3 font-weight-bold">Total price: <span>${totalPrice}€</span></p>
+        <p class="mt-2 ml-4 pb-4 font-weight-bold">Total price: <span>${totalPrice}€</span></p>
       </div>`;
 
       days ? myCart.insertAdjacentHTML("afterbegin", cartHTML) : "";
