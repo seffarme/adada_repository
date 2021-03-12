@@ -39,7 +39,7 @@ const initFlatpickr = () => {
       // Total
       const totalPrice = (days + 1) * pricePerDayValue;
 
-      // Generated HTML to be inserted
+      // Generated HTML to be inserted in DOM
       const cartHTML = `
       <div class="d-flex justify-content-between align-items-center">
         <p class="ml-3"><span>${
