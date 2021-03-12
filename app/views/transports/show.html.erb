@@ -1,4 +1,4 @@
-<div class="main_wrapper m-4" id="transport" data-price="<%= @transport.price %>"> 
+<div class="main_wrapper m-4" id="transport" data-price="<%= @transport.price %>">
   <div class="row align-items-center justify-content-between">
 
     <!-- LEFT COLUMN 8 -->
@@ -24,14 +24,19 @@
         </div>
 
         <!-- DELETE BUTTON IF CURRENT USER -->
-        <div class="text-right">
-          <% if current_user == @transport.owner %>
-            <%= link_to "Delete #{@transport.name}",
-                        transport_path(@transport),
-                        method: :delete,
-                        data: { confirm: "Are you sure?" },
-                        class:"btn btn-outline-danger btn-sm w-25" %>
-          <% end %>
+        <div class="row justify-content-between">
+          <div >
+            <%= link_to "Book another transport 🚗", transports_path(@transports), class:"btn btn-outline-primary btn-sm"%>
+          </div>
+          <div >
+            <% if current_user == @transport.owner %>
+              <%= link_to "Delete #{@transport.name}",
+                          transport_path(@transport),
+                          method: :delete,
+                          data: { confirm: "Are you sure?" },
+                          class:"btn btn-outline-danger btn-sm " %>
+            <% end %>
+          </div>
         </div>
 
 
