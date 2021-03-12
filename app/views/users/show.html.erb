@@ -26,7 +26,7 @@
     <% if @bookings == []%>
       <div class="text-center card-body">
         <h5 class="mb-4">Nothing booked yet </h5>
-        <p><%= link_to "Choose your mount", "/transports", class: "btn btn-primary" %></p>
+        <p><%= link_to "Choose your mount", "/transports", class: "btn btn-primary" %></p> 
       </div>
     <% else @bookings.each do |booking| %>
       <div class="col mb-2">
