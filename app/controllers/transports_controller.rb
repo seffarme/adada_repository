@@ -63,21 +63,8 @@ class TransportsController < ApplicationController
     redirect_to transports_path
   end
 
-  def random
-    @id = Transport.all.sample.id
-    @transport = Transport.find(@id)
-    @bookings = Booking.where(transport_id: @id)
-    @booking = Booking.new
-    @bookings_dates = @bookings.map do |booking|
-      {
-        from: booking.start_date,
-        to:   booking.end_date
-      }
-    end
 
-    @available = true
 
-  end
   private
 
   def transport_params

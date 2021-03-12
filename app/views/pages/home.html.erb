@@ -20,7 +20,7 @@
       </div>
       <div class="row justify-content-start ml-1">
         <p><%= link_to "All the mounts", "/transports", class: "btn btn-ghost mr-3" %></p>
-        <p><%= link_to "Choose for me", random_transports_path, class: "btn btn-ghost" %></p>
+        <p><%= link_to "Choose for me", transport_path(Transport.all.sample), class: "btn btn-ghost" %></p>
       </div>
     </div>
   </div>
