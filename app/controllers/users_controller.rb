@@ -5,7 +5,6 @@ class UsersController < ApplicationController
     # @user = current_user
     @user = User.find(params[:id])
     @bookings = current_user.bookings
-
   end
 
 end
