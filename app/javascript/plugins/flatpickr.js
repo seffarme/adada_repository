@@ -45,7 +45,7 @@ const initFlatpickr = () => {
         <p class="mt-2 ml-4"><span>${
           days + 1
         }</span> days * <span>${pricePerDayValue}</span>€</p>
-        <p class="mt-2 ml-4 pb-4 font-weight-bold">Total price: <span>${totalPrice}€</span></p>
+        <p class="mt-2 ml-4 pb-4 font-weight-bold">Total price: <span id="total-price" data-total-price="${totalPrice}">${totalPrice}€</span></p>
       </div>`;
 
       days ? myCart.insertAdjacentHTML("afterbegin", cartHTML) : "";
