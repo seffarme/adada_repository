@@ -32,14 +32,22 @@
 <div class="row row-cols-sm-12 row-cols-md-6 row-cols-lg-3">
     <% @transports.each do |transport| %>
       <div class="col mb-4">
-        <div class="card h-100">
+        <div class="card">
+          <%= link_to "", transport_path(transport)  %>
           <h3 id="category-top-right"><%= transport.category %></h3>
-          <%= cl_image_tag transport.photo.key, crop: :fill, class:"h-50" %>
+          <%= cl_image_tag transport.photo.key, crop: :fill %>
           <div class="card-body">
-            <h5 class="card-title"><%= link_to transport.name, transport_path(transport) %></h5>
+            <h5 class="card-title"><%= transport.name %></h5>
             <p class="card-text bold"><%= number_with_delimiter(transport.price, :delimiter => ',') %>€/day</p>
             <p class="card-text"><%= transport.description %></p>
             <p class="card-text"><%= transport.address %></p>
+             <div class="text-center">
+              <p>
+                <span class="btn btn-primary center">
+                  Book Now
+                </span>
+              </p>
+            </div>
           </div>
         </div>
       </div>
