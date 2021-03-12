@@ -30,6 +30,7 @@ import "bootstrap";
 import { initMapbox } from "../plugins/init_mapbox";
 import { initFlatpickr } from "../plugins/flatpickr";
 import { changeBookedDatesColor } from "../plugins/customize_date";
+import { modalPrice } from "../plugins/modal_price";
 
 document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
@@ -37,6 +38,7 @@ document.addEventListener("turbolinks:load", () => {
   initMapbox();
   initFlatpickr();
   changeBookedDatesColor();
+  modalPrice();
 });
 
 document.addEventListener("click", (e) => {

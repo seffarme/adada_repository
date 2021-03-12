@@ -1,5 +1,4 @@
 import flatpickr from "flatpickr";
-import modalPrice from "./modal_price"
 import "flatpickr/dist/themes/airbnb.css"; // Note this is important!
 import rangePlugin from "flatpickr/dist/plugins/rangePlugin";
 import { changeBookedDatesColor } from "./customize_date";
@@ -35,8 +34,6 @@ const initFlatpickr = () => {
 
       // Price
       const pricePerDayValue = transportData.dataset.price;
-
-
 
       // Total
       const totalPrice = (days + 1) * pricePerDayValue;
