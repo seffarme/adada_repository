@@ -58,6 +58,10 @@ class TransportsController < ApplicationController
 
   def destroy
     @transport = Transport.find(params[:id])
+
+    Booking.find(@transport.bookings.ids).each do |booking|
+      booking.destroy
+    end
     @transport.destroy
     redirect_to transports_path
   end
