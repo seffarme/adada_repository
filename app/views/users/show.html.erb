@@ -3,7 +3,7 @@
 <div class="profil">
   <div class="profil-detail">
     <%= cl_image_tag(@user.photo.key, :transformation=>[
-      {:width=>100, :height=>100, :gravity=>"face", :crop=>"thumb", :format=>".png"},
+      {:width=>120, :height=>120, :gravity=>"face", :crop=>"thumb", :format=>".png"},
       ])
     %>
   </div>
@@ -33,10 +33,13 @@
         <div class="card-product">
             <%= cl_image_tag booking.transport.photo.key, crop: :fill, class:"card-img-top" %>
             <div class="card-product-infos">
-              <h2><%=booking.transport.name%></h2>
-              <p><%= booking.transport.description %></p>
-              <p><i><i class="fas fa-map-marker-alt"></i> <%= booking.transport.description %></i></p>
+              <div>
+                <h2><%=booking.transport.name%> - <i class="far fa-calendar-alt"></i> booked from <%=booking.start_date.strftime("%d/%m/%Y")%> to <%=booking.end_date.strftime("%d/%m/%Y")%> </h2>
+              </div>
+              <p><%= booking.transport.description %> - <%= @days_reserved%></p>
+              <p><i><i class="fas fa-map-marker-alt"></i> <%= booking.transport.address %></i></p>
               <p class="card-product-price"><b><%= number_with_delimiter(booking.transport.price, :delimiter => ',') %>€/day</b></p>
+
             </div>
           </div>
         </div>
@@ -59,9 +62,9 @@
           <div class="card-product">
               <%= cl_image_tag transport.photo.key, crop: :fill, class:"card-img-top" %>
               <div class="card-product-infos">
-                <h2><%=transport.name%></h2>
+                <h2><%=transport.name%> - <%= transport.count_reserved_numbers%> reservation(s) - <%= transport.count_reserved_days %> day(s) booked </h2>
                 <p><%= transport.description %></p>
-                <p><i><i class="fas fa-map-marker-alt"></i> <%= transport.description %></i></p>
+                <p><i><i class="fas fa-map-marker-alt"></i> <%= transport.address %></i></p>
                 <p class="card-product-price"><b><%= number_with_delimiter(transport.price, :delimiter => ',') %>€/day</b></p>
               </div>
             </div>
