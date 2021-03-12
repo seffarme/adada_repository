@@ -2,8 +2,8 @@ class TransportsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[show index]
 
   def index
-		if params[:category]
-			@transports = Transport.where('category=?', params[:category])
+    if params[:category]
+      @transports = Transport.where('category=?', params[:category])
 
     elsif params[:query].present?
 
@@ -14,9 +14,8 @@ class TransportsController < ApplicationController
       end
 
     else
-			@transports = Transport.order(:price)
-		end
-
+      @transports = Transport.order(:price)
+    end
 
     # # Geocoding
     @markers = @transports.geocoded.map do |transport|
@@ -35,12 +34,12 @@ class TransportsController < ApplicationController
     @bookings_dates = @bookings.map do |booking|
       {
         from: booking.start_date,
-        to:   booking.end_date
+        to: booking.end_date
       }
     end
-    # @transport.bookings = @booking
+    @nber_of_days = @booking.end_date
+    puts @nber_of_days
     @available = true
-    # @available = @transport.bookings.empty?
   end
 
   def new
@@ -62,8 +61,6 @@ class TransportsController < ApplicationController
     @transport.destroy
     redirect_to transports_path
   end
-
-
 
   private
 
