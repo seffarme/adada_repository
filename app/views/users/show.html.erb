@@ -24,9 +24,9 @@
 <div class="mt-8 mb-4 ml-4">
   <h3><i class="fas fa-chevron-circle-down ml-4"></i>  I have booked</h3>
     <% if @bookings == []%>
-      <div class="card text-center card-body">
+      <div class="text-center card-body">
         <h5 class="mb-4">Nothing booked yet </h5>
-        <p><%= link_to "Choose your mount", "/transports", class: "btn btn-primary mr-3" %></p>
+        <p><%= link_to "Choose your mount", "/transports", class: "btn btn-primary" %></p>
       </div>
     <% else @bookings.each do |booking| %>
       <div class="col mb-2">
@@ -52,7 +52,7 @@
 <div class="mt-8 mb-4 ml-4">
   <h3><i class="fas fa-chevron-circle-down ml-4"></i>  I own</h3>
     <% if @user.transports == []%>
-      <div class="card text-center card-body">
+      <div class="text-center card-body">
         <h5 class="mb-4"> Add your favorite mount on Adada and make money </h5>
         <p><%= link_to "Add a transport", new_transport_path, class: "btn btn-primary" %></p>
       </div>
